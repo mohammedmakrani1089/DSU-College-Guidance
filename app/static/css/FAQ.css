@@ -1,0 +1,231 @@
+/* =========================
+   FAQ PAGE MAIN
+========================= */
+.faq_page {
+    width: 85%;
+    max-width: 1000px; /* Thoda narrow kiya taaki text padhne me premium lage */
+    margin: 60px auto 100px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   HEADER SECTION
+========================= */
+.faq_header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.faq_header span {
+    display: inline-block;
+    padding: 6px 15px;
+    background: #eff6ff;
+    color: rgb(11, 85, 235);
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    border: 1px solid #bfdbfe;
+}
+
+.faq_header h1 {
+    margin: 0 0 15px;
+    color: #0f172a;
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.faq_header p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================
+   FAQ CONTAINER & CATEGORY
+========================= */
+.faq_container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.faq_category {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03);
+    transition: all 0.4s ease;
+}
+
+.faq_category:hover {
+    border-color: #bfdbfe;
+    box-shadow: 0 15px 40px rgba(11, 85, 235, 0.06);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CATEGORY HEADING
+========================= */
+.faq_category_heading {
+    padding: 25px 30px;
+    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.faq_category_heading h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 750;
+}
+
+.faq_category_heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =========================
+   FAQ ITEM & QUESTION
+========================= */
+.faq_item {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.faq_item:last-child {
+    border-bottom: none;
+}
+
+.faq_question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 22px 30px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #1e293b;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq_question:hover {
+    background: #f8fafc;
+    color: rgb(11, 85, 235);
+}
+
+/* =========================
+   ANIMATED ICON (+)
+========================= */
+.faq_icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: rgb(11, 85, 235);
+    font-size: 20px;
+    font-weight: 400;
+    transition: transform 0.4s ease, background 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+    padding: 0px 4px 4px 3px;
+}
+
+.faq_question:hover .faq_icon {
+    background: rgb(11, 85, 235);
+    color: #ffffff;
+}
+
+.faq_question.active .faq_icon {
+    background: rgb(11, 85, 235);
+    color: #ffffff;
+    transform: rotate(90deg); 
+}
+
+/* =========================
+   ACTIVE STATE (WHEN OPENED)
+========================= */
+.faq_question.active {
+    background: #f8fafc;
+    color: rgb(11, 85, 235);
+}
+
+.faq_question.active .faq_icon {
+    background: rgb(11, 85, 235);
+    color: #ffffff;
+    transform: rotate(360deg); /* Turns '+' into 'x' */
+}
+
+/* =========================
+   ANSWER ANIMATION (MAGIC)
+========================= */
+.faq_answer {
+    max-height: 0;
+    overflow: hidden;
+    background: #f8fafc;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.faq_question.active + .faq_answer {
+    max-height: 800px; 
+    opacity: 1;
+}
+
+.faq_answer p {
+    margin: 0;
+    padding: 10px 30px 25px 30px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media(max-width: 900px) {
+    .faq_page {
+        width: 90%;
+    }
+}
+
+@media(max-width: 600px) {
+    .faq_page {
+        width: 95%;
+        margin: 40px auto 60px;
+    }
+
+    .faq_header h1 {
+        font-size: 32px;
+    }
+
+    .faq_category_heading {
+        padding: 20px;
+    }
+
+    .faq_question {
+        padding: 18px 20px;
+        font-size: 14px;
+    }
+
+    .faq_question.active + .faq_answer {
+        padding: 10px 20px 20px 20px;
+    }
+}

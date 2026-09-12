@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+
+{%block css%} 
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/admission guide.css')}}">
+{%endblock%}
+
+{% block content %}
+
+<section class="admission_page">
+
+    <div class="admission_header">
+        <span>DSU ADMISSION GUIDE</span>
+        <h1>Welcome To DSU Admission Journey</h1>
+        <p>
+            We Are Here To Help You In Everything You Need To Know Before Starting Your Journey At DSU.
+        </p>
+    </div>
+
+            <div class="container">
+
+                <div class="sub_con1">
+
+                    <div class="card">
+                        <h2> Eligibility For {{cources.DEPARTMENT_NAME}}</h2>
+
+                        <p>{{cources.ELIGIBILITY}}</p>
+                    </div>
+
+                    <div class="card">
+                        <h2> Documents Required For {{cources.DEPARTMENT_NAME}}</h2>
+
+                        <p>{{cources.DOCUMENTS}}</p>
+                    </div>
+            
+
+                    <div class="card">
+                        <h2> Fees </h2>
+
+                        <p>{{cources.FEES}}</p>
+                    </div>
+
+                    <div class="card">
+                        <h2> Scholarship Availability </h2>
+
+                        <p>{{cources.SCHOLARSHIP}}</p>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <div class="card_2">
+                        <h2> DETAILS ABOUT {{cources.DEPARTMENT_NAME}}</h2>
+
+                        <p>{{cources.DESCRIPTION}}</p>
+            </div>
+        
+        </form>
+
+    </div>
+
+    <div class="admission_apply">
+
+        <div>
+            <h2>Begin Your Admission Journey</h2>
+            <p>
+                Take the first step towards your future at DSU.
+            </p>
+        </div>
+
+        <a href="https://dsuni.ac.in/admission-enquiry/" class="apply_button" target="_blank">
+            Apply Now →
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

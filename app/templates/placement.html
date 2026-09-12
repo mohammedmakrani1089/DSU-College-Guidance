@@ -1,0 +1,523 @@
+{% extends 'base.html' %}
+
+{% block title %}Placements - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/placement.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="placement_page">
+
+    <!-- Hero -->
+    <div class="placement_hero">
+        <div class="placement_hero_content">
+            <span>DSU COLLEGE GUIDANCE</span>
+            <h1>Build Your Career With DSU</h1>
+            <p>DSU's Training & Placement Cell helps students become career-ready through professional training, practical exposure, industry interaction and placement opportunities across engineering, pharma, IT, management and other sectors.</p>
+            <div class="placement_hero_buttons">
+                <a href="#placement_statistics" class="placement_primary_button">Explore Placements →</a>
+                <a href="#placement_procedure" class="placement_secondary_button">Placement Process</a>
+            </div>
+        </div>
+
+        <div class="placement_hero_card">
+            <div class="placement_hero_card_top">
+                <span>PLACEMENT SNAPSHOT</span>
+                <strong>2023</strong>
+            </div>
+            <div class="placement_hero_stats">
+                <div>
+                    <strong>₹11 LPA</strong>
+                    <span>Highest Salary</span>
+                </div>
+                <div>
+                    <strong>₹3 LPA</strong>
+                    <span>Average Salary</span>
+                </div>
+                <div>
+                    <strong>150</strong>
+                    <span>Students Placed</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Placement Statistics -->
+    <section class="placement_section" id="placement_statistics">
+        <div class="section_heading">
+            <span>PLACEMENT STATISTICS</span>
+            <h2>Placement Highlights — 2023</h2>
+            <p>Reported placement statistics for the academic year 2022–23, as published by Shiksha.</p>
+        </div>
+
+        <div class="placement_stats_grid">
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">₹</div>
+                <strong>₹11 LPA</strong>
+                <h3>Highest Package</h3>
+                <p>Highest reported salary offered during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">₹</div>
+                <strong>₹3 LPA</strong>
+                <h3>Average Package</h3>
+                <p>Reported average salary for the academic year 2022–23.</p>
+            </div>
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">₹</div>
+                <strong>₹1.56 LPA</strong>
+                <h3>Lowest Package</h3>
+                <p>Reported lowest salary offered during the 2023 placements.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">150</div>
+                <strong>150</strong>
+                <h3>Students Placed</h3>
+                <p>Students reported as placed during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">53+</div>
+                <strong>53+</strong>
+                <h3>Companies Visited</h3>
+                <p>More than 53 companies were reported to have visited the campus.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">190</div>
+                <strong>190</strong>
+                <h3>Students Registered</h3>
+                <p>Students registered for the reported 2023 placement process.</p>
+            </div>
+
+        </div>
+
+        <div class="placement_note">
+            <strong>Data Note:</strong>
+            Placement statistics shown above are reported for 2023 and should not be treated as current-year placement figures.
+        </div>
+    </section>
+
+    <!-- Placement Department -->
+    <section class="placement_section placement_department">
+        <div class="placement_split">
+
+            <div class="placement_content">
+                <span>PLACEMENT DEPARTMENT</span>
+                <h2>Preparing Students For The Professional World</h2>
+                <p>The Training & Placement Cell focuses on understanding students' current skills, identifying strengths and gaps, setting career-oriented objectives and developing suitable training plans.</p>
+                <p>Students receive practical exposure and guidance for internships, real-world learning, resume preparation, portfolio development, interview skills, networking and the overall job-search process.</p>
+
+                <div class="placement_feature_list">
+                    <div>
+                        <strong>01</strong>
+                        <span>Skill Assessment</span>
+                    </div>
+                    <div>
+                        <strong>02</strong>
+                        <span>Career Objectives</span>
+                    </div>
+                    <div>
+                        <strong>03</strong>
+                        <span>Customized Training</span>
+                    </div>
+                    <div>
+                        <strong>04</strong>
+                        <span>Interview Preparation</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="placement_info_card">
+                <span>CAREER READINESS</span>
+                <h3>From Learning To Employment</h3>
+                <p>DSU combines academic learning with industry exposure, practical experience and professional preparation to help students approach placement opportunities with stronger skills and confidence.</p>
+
+                <div class="placement_info_row">
+                    <span>Training</span>
+                    <strong>Corporate Skills</strong>
+                </div>
+                <div class="placement_info_row">
+                    <span>Exposure</span>
+                    <strong>Industry Interaction</strong>
+                </div>
+                <div class="placement_info_row">
+                    <span>Preparation</span>
+                    <strong>Resume & Interviews</strong>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Placement Activities -->
+    <section class="placement_section" id="placement_statistics">
+    <div class="section_heading">
+        <span>PLACEMENT HIGHLIGHTS</span>
+        <h2>DSU Placement Performance</h2>
+        <p>Explore the reported placement highlights and statistics from different placement years.</p>
+    </div>
+
+    <div class="placement_year_tabs">
+        <button type="button" class="placement_year_button active" data-year="2023">2023</button>
+        <button type="button" class="placement_year_button" data-year="2024">2024</button>
+        <button type="button" class="placement_year_button" data-year="2025">2025</button>
+    </div>
+
+    <!-- 2023 -->
+    <div class="placement_year_content active" id="placement-2023">
+
+        <div class="placement_year_heading">
+            <div>
+                <span>PLACEMENT STATISTICS</span>
+                <h3>Placement Highlights — 2023</h3>
+            </div>
+            <p>Detailed placement statistics reported for the 2023 placement drive.</p>
+        </div>
+
+        <div class="placement_stats_grid">
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">1</div>
+                <strong>₹11 LPA</strong>
+                <h3>Highest Package</h3>
+                <p>Highest reported salary offered during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">2</div>
+                <strong>₹3 LPA</strong>
+                <h3>Average Package</h3>
+                <p>Reported average salary for the 2023 placement drive.</p>
+            </div>
+
+
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">3</div>
+                <strong>180+</strong>
+                <h3>Students Placed</h3>
+                <p>Students reported as placed during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">4</div>
+                <strong>53</strong>
+                <h3>Companies Visited</h3>
+                <p>Companies reported to have participated in the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">5</div>
+                <strong>600+</strong>
+                <h3>Students Registered</h3>
+                <p>Students registered for the reported 2023 placement process.</p>
+            </div>
+
+        </div>
+
+        <div class="placement_note">
+            <strong>Source Note:</strong>
+            These figures are reported for the 2023 placement drive and are not presented as current-year results.
+        </div>
+
+    </div>
+
+    <!-- 2024 -->
+    <div class="placement_year_content" id="placement-2024">
+
+        <div class="placement_year_heading">
+            <div>
+                <span>PLACEMENT HIGHLIGHTS</span>
+                <h3>Placement Highlights — 2024</h3>
+            </div>
+            <p>Broader placement highlights reported for the 2024 placement cycle.</p>
+        </div>
+
+        <div class="placement_stats_grid">
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">1</div>
+                <strong>₹23.50 LPA</strong>
+                <h3>Highest Package</h3>
+                <p>Highest reported salary offered during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">2</div>
+                <strong>₹6 LPA</strong>
+                <h3>Average Package</h3>
+                <p>Reported average salary for the 2023 placement drive.</p>
+            </div>
+
+
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">3</div>
+                <strong>250+</strong>
+                <h3>Students Placed</h3>
+                <p>Students reported as placed during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">4</div>
+                <strong>68</strong>
+                <h3>Companies Visited</h3>
+                <p>Companies reported to have participated in the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">5</div>
+                <strong>2k+</strong>
+                <h3>Students Registered</h3>
+                <p>Students registered for the reported 2023 placement process.</p>
+            </div>
+
+        </div>
+
+        <div class="placement_note">
+            <strong>Source Note:</strong>
+            These are broader 2024 placement highlights reported by the referenced external source. Detailed overall average and lowest package figures were not reported there.
+        </div>
+
+    </div>
+
+    <!-- 2025 -->
+    <div class="placement_year_content" id="placement-2025">
+
+        <div class="placement_year_heading">
+            <div>
+                <span>LATEST AVAILABLE REPORT</span>
+                <h3>Placement Highlights — 2025</h3>
+            </div>
+            <p>The latest placement information currently reported for DSU.</p>
+        </div>
+
+        <div class="placement_stats_grid">
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">1</div>
+                <strong>₹28 LPA</strong>
+                <h3>Highest Package</h3>
+                <p>Highest reported salary offered during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">2</div>
+                <strong>₹7.5 LPA</strong>
+                <h3>Average Package</h3>
+                <p>Reported average salary for the 2023 placement drive.</p>
+            </div>
+
+
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">3</div>
+                <strong>420+</strong>
+                <h3>Students Placed</h3>
+                <p>Students reported as placed during the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card green">
+                <div class="placement_stat_icon">4</div>
+                <strong>75</strong>
+                <h3>Companies Visited</h3>
+                <p>Companies reported to have participated in the 2023 placement drive.</p>
+            </div>
+
+            <div class="placement_stat_card blue">
+                <div class="placement_stat_icon">5</div>
+                <strong>2.5k+</strong>
+                <h3>Students Registered</h3>
+                <p>Students registered for the reported 2023 placement process.</p>
+            </div>
+
+        </div>
+
+        <div class="placement_note">
+            <strong>Source Note:</strong>
+            The latest available source reports these placement highlights, while detailed 2025 average and lowest package figures are not available in the referenced data.
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- Placement Procedure -->
+    <section class="placement_section placement_process_section" id="placement_procedure">
+
+        <div class="section_heading">
+            <span>PLACEMENT PROCEDURE</span>
+            <h2>How The Placement Process Works</h2>
+            <p>DSU follows a structured placement process that prepares students and connects them with suitable opportunities.</p>
+        </div>
+
+        <div class="placement_process">
+
+            <div class="placement_process_item">
+                <span>01</span>
+                <div>
+                    <h3>Training</h3>
+                    <p>Students are trained for corporate culture and professional skills through the Training & Placement Cell.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>02</span>
+                <div>
+                    <h3>Industry Interaction</h3>
+                    <p>The career team interacts with companies to understand their expectations and hiring requirements.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>03</span>
+                <div>
+                    <h3>Profiles</h3>
+                    <p>Student profiles and relevant details are shared with participating companies.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>04</span>
+                <div>
+                    <h3>Pre-Placement Talk</h3>
+                    <p>Companies explain their roles, profiles and projects so students can understand the available opportunities.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>05</span>
+                <div>
+                    <h3>Resumes</h3>
+                    <p>Applications are collected and resumes of interested students are shared with the companies.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>06</span>
+                <div>
+                    <h3>Shortlisting</h3>
+                    <p>Companies shortlist candidates considering profiles, locations, remuneration, interests and other relevant factors.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>07</span>
+                <div>
+                    <h3>Interviews</h3>
+                    <p>The company conducts its selection process, which may include CV shortlisting, group discussion, written tests, aptitude tests and interviews.</p>
+                </div>
+            </div>
+
+            <div class="placement_process_item">
+                <span>08</span>
+                <div>
+                    <h3>Offer</h3>
+                    <p>Final selection results are announced by the company and communicated to the selected students.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Recruiters -->
+    <section class="placement_section">
+        <div class="section_heading">
+            <span>OUR RECRUITERS</span>
+            <h2>Companies Hiring DSU Graduates</h2>
+            <p>DSU's official placement page highlights recruiters across engineering, pharma, IT, management, healthcare and agriculture sectors.</p>
+        </div>
+
+        <div class="recruiter_grid">
+            <div class="recruiter_card">TCS</div>
+            <div class="recruiter_card">Nirma Chemicals</div>
+            <div class="recruiter_card">Jyoti CNC</div>
+            <div class="recruiter_card">Amtech Electronics</div>
+            <div class="recruiter_card">Orbit Bearings</div>
+            <div class="recruiter_card">Synergy Transformer</div>
+            <div class="recruiter_card">Paramsoft Global Solutions</div>
+            <div class="recruiter_card">CMS Infosystems</div>
+            <div class="recruiter_card">Crest Infotech</div>
+            <div class="recruiter_card">Reliance Jio</div>
+            <div class="recruiter_card">Zydus</div>
+            <div class="recruiter_card">Intas Pharmaceuticals</div>
+            <div class="recruiter_card">Lupin</div>
+            <div class="recruiter_card">Cipla</div>
+            <div class="recruiter_card">Torrent Pharma</div>
+            <div class="recruiter_card">Sun Pharma</div>
+        </div>
+
+        <p class="recruiter_note">Recruiters shown here are based on companies listed/reported by the referenced placement sources and should not be interpreted as a current-year guaranteed recruiter list.</p>
+    </section>
+
+    <!-- Placement Support -->
+    <section class="placement_section placement_support">
+        <div class="placement_support_header">
+            <span>CAREER SUPPORT</span>
+            <h2>More Than Just Campus Placement</h2>
+            <p>Placement preparation at DSU includes practical exposure, professional skills and guidance that help students prepare for the transition from university to the workplace.</p>
+        </div>
+
+        <div class="placement_support_grid">
+            <div class="placement_support_card">
+                <strong>Resume & Portfolio</strong>
+                <p>Guidance for preparing professional resumes, cover letters and portfolios.</p>
+            </div>
+            <div class="placement_support_card">
+                <strong>Interview Skills</strong>
+                <p>Preparation for interviews and different stages of company selection processes.</p>
+            </div>
+            <div class="placement_support_card">
+                <strong>Networking</strong>
+                <p>Exposure to industry interactions and professional environments.</p>
+            </div>
+            <div class="placement_support_card">
+                <strong>Practical Experience</strong>
+                <p>Internships, industrial training, visits and student projects provide real-world exposure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Committee -->
+    <section class="placement_section">
+        <div class="placement_committee">
+
+            <div class="placement_committee_content">
+                <span>TRAINING & PLACEMENT CELL</span>
+                <h2>Placement Committee</h2>
+                <p>The DSU placement committee includes placement experts and heads of departments who support students throughout their job-seeking journey.</p>
+            </div>
+
+            <div class="placement_contact_card">
+                <div>
+                    <span>CONVENER</span>
+                    <strong>Prof. Mitesh S. Patel</strong>
+                </div>
+                <div>
+                    <span>EMAIL</span>
+                    <a href="mailto:tpo@dsuni.ac.in">tpo@dsuni.ac.in</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="placement_cta">
+        <span>START YOUR CAREER JOURNEY</span>
+        <h2>Prepare Today. Build Your Future Tomorrow.</h2>
+        <p>Explore DSU programs, develop your skills and make the most of academic and industry opportunities available through the university.</p>
+        <a href="{{ url_for('home.home') }}" class="placement_cta_button">Explore DSU →</a>
+    </section>
+
+</section>
+
+{% endblock %}

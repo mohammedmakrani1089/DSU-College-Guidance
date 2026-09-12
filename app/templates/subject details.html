@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/subject details.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<section class="subject_details_page">
+
+    <div class="subject_details_header">
+        <span>DSU ACADEMIC GUIDE</span>
+        <h1>Subject Details</h1>
+        <p>Explore your subjects and subject codes for the selected semester.</p>
+    </div>
+
+    <div class="subject_result_header">
+        <div>
+            <h2>Your Subjects</h2>
+            <p>Subjects available for your selected course and semester.</p>
+        </div>
+
+        <span class="subject_count">{{ subjects|length }} Subjects</span>
+    </div>
+
+    <div class="subjects_list">
+
+        {% for subject in subjects %}
+
+        <div class="subject_card">
+
+            <div class="subject_number">
+                {{ loop.index }}
+            </div>
+
+            <div class="subject_info">
+                <span>SUBJECT {{ loop.index }}</span>
+                <h3>{{ subject.SUBJECT_NAME }}</h3>
+                <p>Subject Code: <strong>{{ subject.SUBJECT_CODE }}</strong></p>
+            </div>
+
+            <div class="subject_code">
+                <small>CODE</small>
+                <strong>{{ subject.SUBJECT_CODE }}</strong>
+            </div>
+
+        </div>
+
+        {% else %}
+
+        <div class="no_subjects">
+            <div>📚</div>
+            <h2>No Subjects Found</h2>
+            <p>No subjects are available for the selected course and semester.</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

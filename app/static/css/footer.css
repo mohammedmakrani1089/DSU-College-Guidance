@@ -1,0 +1,150 @@
+
+/* --- Main Footer Container --- */
+.footer {
+    background-color: #0f172a; 
+    color: #e2e8f0;
+    margin-top: auto; 
+
+    padding: 20px 100px 0px 100px;
+}
+
+/* --- Top Layout (4 Columns Now) --- */
+.footer-top {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    gap: 220px;
+    margin-bottom: 10px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    /* Yahan se bhi white border hata di hai! */
+}
+
+.column{
+    column-rule-style: solid;
+    column-rule-width: 2px;
+    column-rule-color: #ffffff;
+}
+
+.footer-col h5 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 0;
+    text-align: start;
+}
+
+/* --- Image and Text Alignment --- */
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    text-align: left; /* Center se hata kar Left kiya taaki neat lage */
+    gap: 10px;
+}
+
+.footer-contact-item img {
+    width: 18px; 
+    height: 18px;
+    object-fit: contain;
+
+}
+
+/* Text and Links Styling */
+.footer-col p{
+    color: #94a3b8; 
+    font-size: 11px; /* Thoda readable size */
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.2;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.footer-col a{
+    color: #94a3b8; 
+    font-size: 11px; /* Thoda readable size */
+    font-weight: 700;
+    text-decoration: none;
+    line-height: 1.4;
+    margin: 0;
+    transition: color 0.3s ease;
+
+}
+
+.footer-col a:hover {
+    color: rgb(11, 85, 235); 
+}
+
+/* --- Social Media Logos --- */
+.social-logos {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 25px; /* Logos thode sleek kiye hain */
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-4px); 
+}
+
+/* Original Brand Colors */
+.fb { background-color: #1877F2; }
+.insta { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.yt { background-color: #FF0000; }
+.linkedin { background-color: #0A66C2; }
+
+/* --- Bottom Copyright Section --- */
+.footer-bottom {
+    border-top: 1px solid #1e293b; 
+    padding-top: 10px;
+    padding-bottom: 10px; /* Ye bottom spacing ab chipka hua feel hata degi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    gap: 20px;
+}
+
+.footer-bottom p {
+    color: #64748b;
+    margin: 0;
+}
+
+.footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-bottom-links a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+    color: white;
+}
+
+.divider {
+    color: #334155;
+}

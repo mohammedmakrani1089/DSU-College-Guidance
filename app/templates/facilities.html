@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% block title %}Facilities - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/facilities.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="facilities_page">
+
+    <div class="facilities_header">
+        <span>DSU COLLEGE GUIDANCE</span>
+        <h1>Explore DSU Facilities</h1>
+        <p>Discover the academic, residential, recreational and student-support facilities designed to make campus life at Dr. Subhash University more comfortable, practical and engaging.</p>
+    </div>
+
+    <div class="facilities_container">
+
+        <!-- 01 Library -->
+        <div class="facility_item">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu library.png') }}" alt="DSU Library">
+            </div>
+            <div class="facility_info">
+                <span>01</span>
+                <h2>Library</h2>
+                <p>The DSU Library provides students with a wide range of learning resources for regular study, assignments, projects and research. It includes textbooks, reference books, e-books, print and e-journals, magazines, newspapers, question papers, project reports and other academic materials.</p>
+            </div>
+        </div>
+
+        <!-- 02 Laboratories -->
+        <div class="facility_item reverse">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu laboratories2.jpeg') }}" alt="DSU Laboratories">
+            </div>
+            <div class="facility_info">
+                <span>02</span>
+                <h2>Modern Laboratories</h2>
+                <p>Practical learning is an important part of education at DSU. The university provides modern and specialized laboratories where students can perform experiments, develop practical skills and apply concepts learned during classroom sessions to real academic and technical activities.</p>
+            </div>
+        </div>
+
+        <!-- 03 Hostel -->
+        <div class="facility_item">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu hostel.jpeg') }}" alt="DSU Hostel">
+            </div>
+            <div class="facility_info">
+                <span>03</span>
+                <h2>Hostel Facilities</h2>
+                <p>DSU provides separate hostel facilities for boys and girls to support students who come from different cities and regions. The university provides a comfortable residential environment with furnished rooms, dining facilities and other student-oriented amenities.</p>
+                <a href="{{ url_for('home.hostel_facilities') }}" class="facility_button">View Hostel Facilities →</a>
+            </div>
+        </div>
+
+        <!-- 04 Cafeteria -->
+        <div class="facility_item reverse">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu library.png') }}" alt="DSU Cafeteria">
+            </div>
+            <div class="facility_info">
+                <span>04</span>
+                <h2>Cafeteria</h2>
+                <p>The centrally located DSU canteen provides breakfast and lunch facilities along with tea, coffee, cold drinks, ice-cream, snacks and different varieties of food throughout the day. It gives students a convenient place to refresh themselves during campus hours.</p>
+            </div>
+        </div>
+
+        <!-- 05 Sports -->
+        <div class="facility_item">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu sports.png') }}" alt="DSU Sports Facilities">
+            </div>
+            <div class="facility_info">
+                <span>05</span>
+                <h2>Sports Facilities</h2>
+                <p>Sports facilities provide students with opportunities to stay active and participate in different physical activities. DSU highlights sports facilities as an important part of campus life, helping students develop fitness, teamwork, discipline and a healthy balance between academics and extracurricular activities.</p>
+            </div>
+        </div>
+
+        <!-- 06 Transportation -->
+        <div class="facility_item reverse">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu bus.png') }}" alt="DSU Transportation Facility">
+            </div>
+            <div class="facility_info">
+                <span>06</span>
+                <h2>Transportation</h2>
+                <p>DSU provides transportation facilities for students from Junagadh City, Jetpur and Dhoraji. The university operates buses on defined routes and fixed timings to provide convenient transportation between the campus and surrounding areas on working days.</p>
+            </div>
+        </div>
+
+        <!-- 07 Medical -->
+        <div class="facility_item">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu doctor.png') }}" alt="DSU Medical Assistance">
+            </div>
+            <div class="facility_info">
+                <span>07</span>
+                <h2>Medical Assistance</h2>
+                <p>Student well-being is an important part of campus life. DSU highlights on-campus medical assistance to provide students with support when they need basic medical care during their time at the university.</p>
+            </div>
+        </div>
+
+        <!-- 08 Career Development -->
+        <div class="facility_item reverse">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu career.jpg') }}" alt="DSU Career Development">
+            </div>
+            <div class="facility_info">
+                <span>08</span>
+                <h2>Career Development</h2>
+                <p>DSU provides a dedicated centre for career development and training. Students can benefit from activities focused on skills, professional development and career readiness, helping them prepare for future academic and employment opportunities.</p>
+            </div>
+        </div>
+
+        <!-- 09 Classrooms -->
+        <div class="facility_item">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu classroom.png') }}" alt="DSU Classrooms">
+            </div>
+            <div class="facility_info">
+                <span>09</span>
+                <h2>Modern Classrooms</h2>
+                <p>DSU classrooms provide a comfortable academic environment where students attend lectures, discussions, presentations and other learning activities. The classrooms support regular teaching and help students develop strong theoretical knowledge alongside practical learning.</p>
+            </div>
+        </div>
+
+        <!-- 10 Computer Labs -->
+        <div class="facility_item reverse">
+            <div class="facility_image">
+                <img src="{{ url_for('static', filename='campus/dsu computer.png') }}" alt="DSU Computer Labs">
+            </div>
+            <div class="facility_info">
+                <span>10</span>
+                <h2>Computer Labs</h2>
+                <p>Computer labs provide students with computing resources for programming, practical sessions, assignments and project development. These facilities help students gain hands-on experience with technology and apply their academic knowledge to practical work.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Facilities CTA -->
+    <div class="facilities_cta">
+        <span>STUDENT EXPERIENCE AT DSU</span>
+        <h2>Learn, Grow & Build Your Future</h2>
+        <p>From academic resources and practical laboratories to sports, accommodation, transportation and career support, DSU provides facilities that support students throughout their university journey.</p>
+        <a href="{{ url_for('home.campus_tour') }}" class="facilities_cta_button">Explore Campus Tour →</a>
+    </div>
+
+</section>
+
+{% endblock %}

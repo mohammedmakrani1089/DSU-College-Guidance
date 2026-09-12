@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+
+{% block title %}Academics - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/academics.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/subject details.css') }}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="academics_page">
+
+    <!-- ================= HERO HEADER ================= -->
+    <div class="academics_header">
+        <span class="header_badge">DSU COLLEGE GUIDANCE</span>
+        <h1>Explore Academics at DSU</h1>
+        <p>
+            Discover career-focused academic programs, specialized schools, interactive learning pathways, 
+            cutting-edge research facilities, and rich student resources.
+        </p>
+    </div>
+
+    <!-- ================= ACADEMIC OVERVIEW ================= -->
+    <div class="academic_overview">
+        <div class="academic_overview_content">
+            <span class="section_pill green_pill">ACADEMIC OVERVIEW</span>
+            <h2>Learn Today, Build Your Future Tomorrow</h2>
+            <p>
+                Dr. Subhash University offers career-driven programs across Diploma, Undergraduate, 
+                Postgraduate, and Doctoral levels. Our ecosystem integrates classroom theory with hands-on labs, 
+                live industrial projects, corporate internships, and active research mentorship.
+            </p>
+        </div>
+
+        <div class="academic_overview_stats">
+            <div class="stat_card">
+                <strong>130+</strong>
+                <span>Academic Programs</span>
+            </div>
+            <div class="stat_card">
+                <strong>4</strong>
+                <span>Degree Levels</span>
+            </div>
+            <div class="stat_card">
+                <strong>6</strong>
+                <span>Specialized Schools</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= PROGRAM LEVELS ================= -->
+    <div class="academic_section">
+        <div class="academic_section_heading">
+            <span class="section_pill blue_pill">PROGRAM LEVELS</span>
+            <h2>Choose Your Academic Path</h2>
+            <p>Explore programs tailored to your qualification stage and ambitious career aspirations.</p>
+        </div>
+
+        <div class="program_level_grid">
+            <!-- 01 Diploma -->
+            <div class="program_level_card blue_card">
+                <div class="card_top">
+                    <span class="level_num">01</span>
+                    <span class="card_type">Foundational</span>
+                </div>
+                <h3>Diploma Programs</h3>
+                <p>Industry-relevant technical diploma courses focused on foundational skills, hands-on training, and early career entry.</p>
+                <a href="{{ url_for('home.departments') }}" class="card_link">Explore Programs &rarr;</a>
+            </div>
+
+            <!-- 02 UG -->
+            <div class="program_level_card green_card">
+                <div class="card_top">
+                    <span class="level_num">02</span>
+                    <span class="card_type">Graduation</span>
+                </div>
+                <h3>Undergraduate</h3>
+                <p>Comprehensive degree programs that build deep core concepts, technical dexterity, analytical thinking, and leadership.</p>
+                <a href="{{ url_for('home.departments') }}" class="card_link">Explore Programs &rarr;</a>
+            </div>
+
+            <!-- 03 PG -->
+            <div class="program_level_card blue_card">
+                <div class="card_top">
+                    <span class="level_num">03</span>
+                    <span class="card_type">Specialization</span>
+                </div>
+                <h3>Postgraduate</h3>
+                <p>Advanced curricula offering specialized domain knowledge, practical research exposure, and managerial capabilities.</p>
+                <a href="{{ url_for('home.departments') }}" class="card_link">Explore Programs &rarr;</a>
+            </div>
+
+            <!-- 04 Doctoral -->
+            <div class="program_level_card green_card">
+                <div class="card_top">
+                    <span class="level_num">04</span>
+                    <span class="card_type">Research</span>
+                </div>
+                <h3>Doctoral Studies</h3>
+                <p>Ph.D. tracks designed for scholarly inquiry, innovative patent development, academic leadership, and industrial problem-solving.</p>
+                <a href="{{ url_for('home.departments') }}" class="card_link">Explore Programs &rarr;</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= ACADEMIC SCHOOLS ================= -->
+    <div class="academic_section">
+        <div class="academic_section_heading">
+            <span class="section_pill green_pill">ACADEMIC SCHOOLS</span>
+            <h2>Explore DSU's Academic Schools</h2>
+            <p>Our dedicated schools offer world-class faculty, cutting-edge labs, and curated curricula.</p>
+        </div>
+
+        <div class="academic_school_grid">
+            <div class="academic_school_card">
+                <span class="school_badge blue">01</span>
+                <h3>School of Engineering &amp; Technology</h3>
+                <p>Practical engineering pedagogy powered by advanced simulation labs, workshop centers, and tech projects.</p>
+            </div>
+
+            <div class="academic_school_card">
+                <span class="school_badge green">02</span>
+                <h3>School of Pharmacy</h3>
+                <p>PCI-compliant pharmaceutical laboratories and formulation research geared towards healthcare and medicine.</p>
+            </div>
+
+            <div class="academic_school_card">
+                <span class="school_badge blue">03</span>
+                <h3>School of Computer Applications</h3>
+                <p>Contemporary computing, modern web architecture, artificial intelligence, software design, and cloud technologies.</p>
+            </div>
+
+            <div class="academic_school_card">
+                <span class="school_badge green">04</span>
+                <h3>School of Science</h3>
+                <p>Applied scientific disciplines blending theoretical depth, rigorous wet-lab experimentation, and data analysis.</p>
+            </div>
+
+            <div class="academic_school_card">
+                <span class="school_badge blue">05</span>
+                <h3>School of Commerce &amp; Management</h3>
+                <p>Corporate financial strategy, modern marketing frameworks, entrepreneurship incubator, and analytics.</p>
+            </div>
+
+            <div class="academic_school_card">
+                <span class="school_badge green">06</span>
+                <h3>School of Arts &amp; Humanities</h3>
+                <p>Humanities, global communication, critical discourse, ethical philosophy, and holistic personality growth.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2-BOX SPLIT: LEARNING & CAMPUS SUPPORT ================= -->
+    <div class="academic_two_box_section">
+
+        <!-- Left Box: Learning Journey -->
+        <div class="learning_journey_card">
+            <div class="box_header">
+                <span class="tag_badge blue_tag">LEARNING JOURNEY</span>
+                <h2>How Students Learn at DSU</h2>
+                <p>An outcome-driven cycle blending classroom concepts with continuous practical application.</p>
+            </div>
+
+            <div class="learning_chain">
+                <div class="learning_chain_line"></div>
+
+                <div class="learning_chain_item">
+                    <div class="chain_icon_wrapper green">
+                        <span class="step_badge">01</span>
+                        <img src="{{ url_for('static', filename='icon/class.png') }}" alt="Classroom Learning">
+                    </div>
+                    <div class="chain_text">
+                        <h3>Classroom Learning</h3>
+                        <p>Build solid conceptual fundamentals through interactive faculty discussions.</p>
+                    </div>
+                </div>
+
+                <div class="learning_chain_item">
+                    <div class="chain_icon_wrapper blue">
+                        <span class="step_badge">02</span>
+                        <img src="{{ url_for('static', filename='icon/microscope.png') }}" alt="Practical Learning">
+                    </div>
+                    <div class="chain_text">
+                        <h3>Practical Learning</h3>
+                        <p>Validate theoretical knowledge through regular lab experiments and workshops.</p>
+                    </div>
+                </div>
+
+                <div class="learning_chain_item">
+                    <div class="chain_icon_wrapper green">
+                        <span class="step_badge">03</span>
+                        <img src="{{ url_for('static', filename='icon/design.png') }}" alt="Projects">
+                    </div>
+                    <div class="chain_text">
+                        <h3>Semester Projects</h3>
+                        <p>Collaborate on real-world engineering and business prototypes every term.</p>
+                    </div>
+                </div>
+
+                <div class="learning_chain_item">
+                    <div class="chain_icon_wrapper blue">
+                        <span class="step_badge">04</span>
+                        <img src="{{ url_for('static', filename='icon/building.png') }}" alt="Industry Exposure">
+                    </div>
+                    <div class="chain_text">
+                        <h3>Industry Exposure</h3>
+                        <p>Interact with industry stalwarts through field trips, seminars, and internships.</p>
+                    </div>
+                </div>
+
+                <div class="learning_chain_item">
+                    <div class="chain_icon_wrapper green">
+                        <span class="step_badge">05</span>
+                        <img src="{{ url_for('static', filename='icon/focus.png') }}" alt="Career Ready">
+                    </div>
+                    <div class="chain_text">
+                        <h3>Career Readiness</h3>
+                        <p>Hone professional acumen, placement aptitude, and interview confidence.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Box: Campus Support -->
+        <div class="campus_facilities_card">
+            <div class="box_header">
+                <span class="tag_badge green_tag">CAMPUS SUPPORT</span>
+                <h2>Everything You Need Beyond The Classroom</h2>
+                <p>Modern campus infrastructure supporting academic excellence, personal wellness, and community life.</p>
+            </div>
+
+            <div class="facilities_mini_grid">
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/books.png') }}" alt="Library">
+                    <span>Central Library</span>
+                </div>
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/lab-technician.png') }}" alt="Laboratories">
+                    <span>Modern Labs</span>
+                </div>
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/ux.png') }}" alt="Computer Labs">
+                    <span>Computer Center</span>
+                </div>
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/volleyball.png') }}" alt="Sports">
+                    <span>Sports Complex</span>
+                </div>
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/school-bus.png') }}" alt="Transportation">
+                    <span>Fleet Transit</span>
+                </div>
+                <div class="facility_mini_pill">
+                    <img src="{{ url_for('static', filename='icon/flats.png') }}" alt="Hostel">
+                    <span>On-Campus Hostel</span>
+                </div>
+            </div>
+
+            <a href="{{ url_for('home.facilities') }}" class="facilities_action_btn">
+                View All Facilities &rarr;
+            </a>
+        </div>
+
+    </div>
+
+    <!-- ================= SUBJECT QUICK ACCESS BANNER ================= -->
+    <div class="academic_subject_box">
+        <div class="academic_subject_text">
+            <span class="section_pill blue_pill">CURRICULUM SYLLABUS</span>
+            <h2>Know Exactly What You Will Study</h2>
+            <p>Browse semester-wise subject codes, elective tracks, course prerequisites, and credits.</p>
+        </div>
+        <a href="#" class="academic_subject_button" id="subjectDetailsBtn">
+            View Subject Details &rarr;
+        </a>
+    </div>
+
+    <!-- ================= RESEARCH & INNOVATION ================= -->
+    <div class="academic_research">
+        <div class="academic_research_content">
+            <span class="research_tag">RESEARCH &amp; INNOVATION</span>
+            <h2>Discover Groundbreaking Research Opportunities</h2>
+            <p>
+                DSU nurtures an active research environment equipped with departmental R&amp;D hubs, 
+                intellectual property consulting, startup seed capital, and direct academic-industry tie-ups.
+            </p>
+        </div>
+
+        <div class="academic_research_points">
+            <div class="research_point_card">
+                <strong>Research Mentorship</strong>
+                <span>One-on-one guidance from doctorate professors and domain researchers.</span>
+            </div>
+            <div class="research_point_card">
+                <strong>Advanced Core Labs</strong>
+                <span>High-precision analytical instrumentation and testing infrastructure.</span>
+            </div>
+            <div class="research_point_card">
+                <strong>Industry Tie-Ups</strong>
+                <span>Live commercial project consultation and industrial sponsorships.</span>
+            </div>
+            <div class="research_point_card">
+                <strong>Startup Incubation</strong>
+                <span>Mentorship, legal patent assistance, and early-stage startup support.</span>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}

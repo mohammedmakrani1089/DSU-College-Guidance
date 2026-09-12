@@ -1,0 +1,317 @@
+/* =========================================
+   FACILITIES PAGE - COMPACT PREMIUM UI
+========================================= */
+.facilities_page {
+    width: 92%;
+    max-width: 1100px; /* Compact & Elegant */
+    margin: 50px auto 80px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   HEADER SECTION (DSU BLUE)
+========================================= */
+.facilities_header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.facilities_header span {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #eff6ff;
+    color: #1e3a8a; /* Deep DSU Blue */
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.facilities_header h1 {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 38px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+}
+
+.facilities_header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14.5px;
+    line-height: 1.65;
+}
+
+/* =========================================
+   FACILITIES CONTAINER & CARDS
+========================================= */
+.facilities_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Perfect spacing */
+}
+
+.facility_item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Premium Left Border Accent (Blue for Odd, Green for Even) */
+.facility_item:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1e3a8a, #3b82f6);
+}
+
+.facility_item:nth-child(even):before {
+    background: linear-gradient(to bottom, #059669, #10b981);
+}
+
+/* Hover Effects */
+.facility_item:hover {
+    transform: translateY(-4px);
+    border-color: #dbeafe;
+    box-shadow: 5px 25px 45px rgba(30, 58, 138, 0.08);
+}
+
+.facility_item:nth-child(even):hover {
+    border-color: #d1fae5;
+    box-shadow: 5px 25px 45px rgba(5, 150, 105, 0.08);
+}
+
+/* Reverse Logic */
+.facility_item.reverse .facility_image { order: 2; }
+.facility_item.reverse .facility_info { order: 1; }
+
+/* =========================================
+   IMAGE - STRICTLY 220PX
+========================================= */
+.facility_image {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Fixed elegant size */
+    overflow: hidden;
+    border-radius: 14px;
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+}
+
+/* Subtle overlay on image to make it look rich */
+.facility_image:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(5, 150, 105, 0.05));
+    pointer-events: none;
+}
+
+.facility_image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.facility_item:hover .facility_image img {
+    transform: scale(1.04);
+}
+
+/* =========================================
+   TEXT SECTION & NUMBER BADGES
+========================================= */
+.facility_info {
+    padding: 10px;
+}
+
+/* Number Badges */
+.facility_info > span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    
+    /* DSU BLUE THEME (Normal Cards) */
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(30, 58, 138, 0.2);
+}
+
+/* GREEN THEME (Reverse Cards) */
+.facility_item:nth-child(even) .facility_info > span {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: #ffffff;
+    box-shadow: 0 6px 15px rgba(5, 150, 105, 0.2);
+}
+
+.facility_info h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 22px;
+    font-weight: 750;
+}
+
+.facility_info p {
+    margin: 0;
+    color: #475569;
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+
+/* =========================================
+   IN-CARD BUTTON (E.g. Hostel Button)
+========================================= */
+.facility_button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 18px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe;
+    transition: all 0.3s ease;
+}
+
+.facility_button:hover {
+    background: #1e3a8a;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+}
+
+/* =========================================
+   BOTTOM CTA BANNER - BLUE TO GREEN GRADIENT
+========================================= */
+.facilities_cta {
+    position: relative;
+    margin-top: 50px;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%); /* Perfect DSU Blend */
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(5, 150, 105, 0.15);
+}
+
+/* Abstract Background Circles */
+.facilities_cta:before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -80px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.facilities_cta:after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    bottom: -150px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.facilities_cta > span {
+    position: relative;
+    z-index: 1;
+    color: #a7f3d0; /* Mint green for contrast */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.facilities_cta h2 {
+    position: relative;
+    z-index: 1;
+    margin: 10px 0 12px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.facilities_cta p {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto 25px;
+    color: #e2e8f0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.facilities_cta_button {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #059669; /* Emerald Green Text */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.facilities_cta_button:hover {
+    transform: translateY(-2px);
+    background: #ecfdf5;
+    box-shadow: 0 12px 25px rgba(255, 255, 255, 0.2);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (FOR MOBILE)
+========================================= */
+@media (max-width: 850px) {
+    .facility_item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Mobile par Image hamesha upar */
+    .facility_item.reverse .facility_image { order: 1; }
+    .facility_item.reverse .facility_info { order: 2; }
+
+    .facility_image { height: 200px; }
+    .facility_info { padding: 5px 8px; }
+}
+
+@media (max-width: 600px) {
+    .facilities_page { margin: 35px auto 60px; }
+    .facilities_header h1 { font-size: 28px; }
+    .facility_info h2 { font-size: 20px; }
+    
+    .facilities_cta { padding: 35px 20px; }
+    .facilities_cta h2 { font-size: 24px; }
+}

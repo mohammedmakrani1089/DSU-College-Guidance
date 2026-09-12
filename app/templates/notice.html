@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block css%} 
+
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/notice.css')}}">
+{% endblock%}
+
+{% block content%}
+
+<section class="notices-page">
+
+    <div class="notices-heading">
+        <span>DSU NOTICES</span>
+
+        <h1>All Notices</h1>
+
+        <p>
+            Stay Updated With The Latest Announcements,
+            Academic Activities And Important Information.
+        </p>
+    </div>
+
+
+    <div class="notices-content">
+
+        <div class="notices-top">
+
+            <div>
+                <h2>Upcoming Notices</h2>
+
+                <p>
+                    Latest announcements from DSU
+                </p>
+            </div>
+
+            <span class="notice-count">
+                {{ notices|length }} Notices
+            </span>
+
+        </div>
+
+
+        <div class="notice-list">
+                
+            {% for notice in notices %}
+
+            <article class="notice-card">
+
+                <div class="notice-date">
+
+                    <span>
+                        {{ notice.NOTICE_DATE.strftime('%b') }}
+                    </span>
+
+                    <strong>
+                        {{ notice.NOTICE_DATE.strftime('%d') }}
+                    </strong>
+
+                    <small>
+                        {{ notice.NOTICE_DATE.strftime('%Y') }}
+                    </small>
+
+                </div>
+
+
+                <div class="notice-details">
+
+                    <span class="notice-tag">
+                        General
+                    </span>
+
+                    <h3>
+                        {{ notice.TITLE }}
+                    </h3>
+
+                    <p>
+                        {{ notice.DESCRIPTION }}
+                    </p>
+
+                    <div class="notice-meta">
+
+                        <span>
+                            📅
+                            {{ notice.NOTICE_DATE.strftime('%d %b %Y') }}
+                        </span>
+
+                        <span>
+                            📢 DSU
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+            {% else %}
+
+            <div class="no-notices">
+
+                <h2>No Upcoming Notices</h2>
+
+                <p>
+                    There are no notices available
+                    for the next one month.
+                </p>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

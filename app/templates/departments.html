@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+
+{% block title %} DSU | Departments {% endblock %}
+
+{% block css %} 
+<link rel="stylesheet" href="{{ url_for('static', filename='css/departments.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="brochure_page">
+    
+    <!-- HEADER -->
+    <div class="brochure_header">
+        <span>EXPLORE OUR COURSES</span>
+        <h1>Download e-Brochures</h1>
+        <p>Get detailed information about our Departments, Programs, Curriculum, And Campus Life.</p>
+    </div>
+
+    <!-- BROCHURE CARDS GRID -->
+<div class="brochure_grid">
+
+    <!-- CARD 1:-->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/01.webp') }}" alt="B.Tech" class="cover_img zoomable">
+        </div>
+        <div class="brochure_info">
+            <h3>Diploma Engineering</h3>
+            <a href="{{ url_for('static', filename='pdf/01-Diploma-Engineering.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 2:-->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/02.webp') }}" alt="M.Tech" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Engineering & Technology</h3>
+            <a href="{{ url_for('static', filename='pdf/02-SoET.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 3:-->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/03.webp') }}" alt="Diploma" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Computer & Application</h3>
+            <a href="{{ url_for('static', filename='pdf/03-SoCA-1.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 4: -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/04.webp') }}" alt="BCA" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Science</h3>
+            <a href="{{ url_for('static', filename='pdf/04-Sos-1.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 5: -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/05.webp') }}" alt="MCA" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Commerce & Management</h3>
+            <a href="{{ url_for('static', filename='pdf/05-SoCM.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 6:  -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/06.webp') }}" alt="BBA" class="cover_img zoomable">
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Pharmacy</h3>
+            <a href="{{ url_for('static', filename='pdf/06-SoP.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 7: -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/07.webp') }}" alt="MBA" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Nursing</h3>
+            <a href="{{ url_for('static', filename='pdf/07-SoN.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 8: -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/08.webp') }}" alt="B.Pharm" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Physiotherapy</h3>
+            <a href="{{ url_for('static', filename='pdf/08-SoPH.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 9:  -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/09.webp') }}" alt="M.Pharm" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Physical Education</h3>
+            <a href="{{ url_for('static', filename='pdf/09-SoPE.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+    <!-- CARD 10:  -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/10.webp') }}" alt="B.Sc" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Agriculture</h3>
+            <a href="{{ url_for('static', filename='pdf/10-SoA.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div> 
+
+    <!-- CARD 11 -->
+    <div class="brochure_card">
+        <div class="brochure_img_wrapper">
+            <img src="{{ url_for('static', filename='campus/11.webp') }}" alt="Nursing" class="cover_img zoomable">
+
+        </div>
+        <div class="brochure_info">
+            <h3>School Of Arts & Humanities</h3>
+            <a href="{{ url_for('static', filename='pdf/11-SoAH.pdf') }}" target="_blank" class="download_btn">View / Download</a>
+        </div>
+    </div>
+
+</div>
+</section>
+{% endblock %}

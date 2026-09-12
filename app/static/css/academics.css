@@ -1,0 +1,795 @@
+/* =========================================
+   ACADEMICS PAGE - DSU UNIFIED DESIGN SYSTEM
+========================================= */
+.academics_page {
+    width: 92%;
+    max-width: 1200px;
+    margin: 50px auto 90px;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* =========================================
+   PAGE HERO HEADER
+========================================= */
+.academics_header {
+    max-width: 780px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.header_badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.academics_header h1 {
+    margin: 0 0 14px;
+    font-size: 44px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    color: #17264a;
+}
+
+.academics_header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+/* Common Section Pills */
+.section_pill {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.blue_pill {
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+}
+
+.green_pill {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+/* =========================================
+   ACADEMIC OVERVIEW
+========================================= */
+.academic_overview {
+    display: grid;
+    grid-template-columns: 1.35fr 0.65fr;
+    
+    gap: 36px;
+    padding: 36px 40px;
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #f8fbff 0%, #f0fdf4 100%);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.academic_overview_content h2 {
+    margin: 0 0 20px;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+    line-height: 1.25;
+}
+
+.academic_overview_content p {
+    margin: 0;
+    color: #475569;
+    font-size: 20px;
+    font-weight: 350;
+    line-height: 1.75;
+}
+
+.academic_overview_stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat_card {
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s ease;
+}
+
+.stat_card:hover {
+    transform: translateY(-2px);
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 22px rgba(30, 58, 138, 0.06);
+}
+
+.stat_card strong {
+    display: block;
+    font-size: 26px;
+    font-weight: 900;
+    color: #1e3a8a;
+    line-height: 1.1;
+    margin-bottom: 3px;
+}
+
+.stat_card span {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================
+   PROGRAM LEVELS (4 COLUMNS)
+========================================= */
+.academic_section {
+    margin-top: 65px;
+}
+
+.academic_section_heading {
+    max-width: 720px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.academic_section_heading h2 {
+    margin: 0 0 10px;
+    font-size: 32px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+    color: #0f172a;
+}
+
+.academic_section_heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14.5px;
+    line-height: 1.65;
+}
+
+.program_level_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.program_level_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.program_level_card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.program_level_card.blue_card::before {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+}
+
+.program_level_card.green_card::before {
+    background: linear-gradient(90deg, #059669, #10b981);
+}
+
+.program_level_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+}
+
+.program_level_card.blue_card:hover { border-color: #bfdbfe; }
+.program_level_card.green_card:hover { border-color: #a7f3d0; }
+
+.card_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.level_num {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.blue_card .level_num {
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+}
+
+.green_card .level_num {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+.card_type {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.program_level_card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+    font-weight: 750;
+    color: #0f172a;
+}
+
+.program_level_card p {
+    margin: 0 0 20px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.65;
+    flex-grow: 1;
+}
+
+.card_link {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 750;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+}
+
+.blue_card .card_link { color: #1e3a8a; }
+.green_card .card_link { color: #059669; }
+
+.program_level_card:hover .card_link {
+    gap: 8px;
+}
+
+/* =========================================
+   ACADEMIC SCHOOLS (6 CARDS, 3 COLUMNS)
+========================================= */
+.academic_school_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.academic_school_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.academic_school_card:hover {
+    transform: translateY(-4px);
+    border-color: #bfdbfe;
+    box-shadow: 0 14px 30px rgba(30, 58, 138, 0.07);
+}
+
+.school_badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.school_badge.blue {
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(30, 58, 138, 0.2);
+}
+
+.school_badge.green {
+    background: linear-gradient(135deg, #059669, #10b981);
+    color: #ffffff;
+    box-shadow: 0 6px 14px rgba(5, 150, 105, 0.2);
+}
+
+.academic_school_card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 750;
+    color: #0f172a;
+    line-height: 1.4;
+}
+
+.academic_school_card p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13.5px;
+    line-height: 1.65;
+}
+
+/* =========================================
+   TWO-BOX SPLIT LAYOUT (LEARNING & SUPPORT)
+========================================= */
+.academic_two_box_section {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 32px;
+    align-items: stretch;
+}
+
+.learning_journey_card,
+.campus_facilities_card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 36px 32px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s ease;
+}
+
+.learning_journey_card:hover,
+.campus_facilities_card:hover {
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+.campus_facilities_card {
+    border: 1.5px solid #dcfce7;
+    background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 40%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box_header {
+    margin-bottom: 26px;
+}
+
+.tag_badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.blue_tag {
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+}
+
+.green_tag {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+
+.box_header h2 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 10px;
+    letter-spacing: -0.5px;
+}
+
+.box_header p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Learning Timeline Chain */
+.learning_chain {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.learning_chain_line {
+    position: absolute;
+    top: 25px;
+    bottom: 25px;
+    left: 28px;
+    width: 2px;
+    background: linear-gradient(to bottom, #10b981, #2563eb);
+    z-index: 0;
+}
+
+.learning_chain_item {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 18px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s ease;
+}
+
+.learning_chain_item:hover {
+    transform: translateX(6px);
+    border-color: #bfdbfe;
+    box-shadow: 0 8px 22px rgba(37, 99, 235, 0.08);
+}
+
+.chain_icon_wrapper {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chain_icon_wrapper.green {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.chain_icon_wrapper.blue {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.chain_icon_wrapper img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.step_badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffffff;
+}
+
+.chain_icon_wrapper.green .step_badge { background: #059669; }
+.chain_icon_wrapper.blue .step_badge { background: #2563eb; }
+
+.chain_text h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 750;
+    color: #0f172a;
+}
+
+.chain_text p {
+    margin: 0;
+    font-size: 12.5px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+/* Facilities Mini Grid */
+.facilities_mini_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 20px;
+    margin: 10px 0 26px;
+}
+
+.facility_mini_pill {
+    display: flex;
+    align-items: center;
+    gap: 12px ;
+    padding: 14px 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.02);
+    transition: all 0.3s ease;
+}
+
+.facility_mini_pill:hover {
+    border-color: #a7f3d0;
+    background: #f0fdf4;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(5, 150, 105, 0.08);
+}
+
+.facility_mini_pill img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.facilities_action_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 26px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 750;
+    text-decoration: none;
+    align-self: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(5, 150, 105, 0.2);
+}
+
+.facilities_action_btn:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3);
+}
+
+/* =========================================
+   SUBJECT QUICK ACCESS BANNER
+========================================= */
+.academic_subject_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 65px;
+    padding: 32px 38px;
+    border: 1px solid #bfdbfe;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.05);
+}
+
+.academic_subject_text h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.academic_subject_text p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.academic_subject_button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 13px 24px;
+    border-radius: 12px;
+    background: #1e3a8a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 750;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.2);
+}
+
+.academic_subject_button:hover {
+    background: #4c72ef;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(30, 58, 138, 0.3);
+}
+
+/* =========================================
+   RESEARCH & INNOVATION (CINEMATIC CARD)
+========================================= */
+.academic_research {
+    position: relative;
+    margin-top: 65px;
+    padding: 45px 40px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #064e3b 100%);
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.2);
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 36px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.research_tag {
+    display: inline-block;
+    color: #a7f3d0;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.academic_research_content h2 {
+    margin: 0 0 14px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+    line-height: 1.25;
+}
+
+.academic_research_content p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.academic_research_points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.research_point_card {
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.research_point_card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(167, 243, 208, 0.4);
+    transform: translateY(-4px);
+}
+
+.research_point_card strong {
+    display: block;
+    color: #ffffff;
+    font-size: 13.5px;
+    font-weight: 750;
+    margin-bottom: 5px;
+}
+
+.research_point_card span {
+    color: #94a3b8;
+    font-size: 11.5px;
+    line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+========================================= */
+@media (max-width: 1024px) {
+    .academic_overview {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .academic_overview_stats {
+        flex-direction: row;
+    }
+
+    .stat_card {
+        flex: 1;
+    }
+
+    .program_level_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .academic_school_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .academic_two_box_section {
+        grid-template-columns: 1fr;
+    }
+
+    .academic_research {
+        grid-template-columns: 1fr;
+        padding: 36px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .academics_header h1 {
+        font-size: 34px;
+    }
+
+    .academic_overview_stats {
+        flex-direction: column;
+    }
+
+    .academic_subject_box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .academic_research_points {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 580px) {
+    .academics_page {
+        width: 94%;
+        margin: 35px auto 65px;
+    }
+
+    .academics_header h1 {
+        font-size: 28px;
+    }
+
+    .academic_overview_content h2 {
+        font-size: 24px;
+    }
+
+    .program_level_grid,
+    .academic_school_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .facilities_mini_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning_journey_card,
+    .campus_facilities_card {
+        padding: 24px 18px;
+    }
+}

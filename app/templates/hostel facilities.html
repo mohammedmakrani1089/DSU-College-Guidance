@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}Hostel Facilities - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/hostel facilities.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hostel_page">
+
+    <div class="hostel_header">
+        <span>DSU COLLEGE GUIDANCE</span>
+        <h1>Hostel Facilities</h1>
+        <p>Explore the hostel options, room types and fee details available for students at Dr. Subhash University.</p>
+    </div>
+
+    <div class="hostel_card">
+
+        <div class="hostel_card_header">
+            <h2>Dr. Subhash University Junagadh Hostel For Boys</h2>
+            <span>Fee: ₹65,000 – 90,000</span>
+        </div>
+
+        <div class="hostel_table_wrapper">
+            <table class="hostel_table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Hostel Type</th>
+                        <th>Room Type</th>
+                        <th>Sem I + II</th>
+                        <th>Yearly Fees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Boys – Standard</td>
+                        <td>Non-AC</td>
+                        <td>04 Bed (Attached Room)</td>
+                        <td>35,000 + 35,000</td>
+                        <td>65,000</td>
+                    </tr>
+                    <tr>
+                        <td>Boys – Luxury</td>
+                        <td>Non-AC</td>
+                        <td>02 Bed (Attached Room)</td>
+                        <td>40,000 + 40,000</td>
+                        <td>75,000</td>
+                    </tr>
+                    <tr>
+                        <td>Boys – Premium</td>
+                        <td>AC</td>
+                        <td>02 Bed (Attached Room)</td>
+                        <td>50,000 + 50,000</td>
+                        <td>90,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="hostel_card">
+
+        <div class="hostel_card_header">
+            <h2>Dr. Subhash University Junagadh Hostel For Girls</h2>
+            <span>Fee: ₹75,000 – ₹1,20,000</span>
+        </div>
+
+        <div class="hostel_table_wrapper">
+            <table class="hostel_table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Hostel Type</th>
+                        <th>Room Type</th>
+                        <th>Sem I + II</th>
+                        <th>Yearly Fees</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Girls – Standard</td>
+                        <td>Non-AC</td>
+                        <td>04 Bed (Attached Room)</td>
+                        <td>35,000 + 35,000</td>
+                        <td>65,000</td>
+                    </tr>
+                    <tr>
+                        <td>Girls – Luxury</td>
+                        <td>Non-AC</td>
+                        <td>02 Bed (Attached Room)</td>
+                        <td>40,000 + 40,000</td>
+                        <td>75,000</td>
+                    </tr>
+                    <tr>
+                        <td>Girls – Deluxe</td>
+                        <td>AC</td>
+                        <td>04 Bed (Attached Room)</td>
+                        <td>45,000 + 45,000</td>
+                        <td>85,000</td>
+                    </tr>
+                    <tr>
+                        <td>Girls – Premium</td>
+                        <td>AC</td>
+                        <td>02 Bed (Attached Room)</td>
+                        <td>50,000 + 50,000</td>
+                        <td>95,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="hostel_bottom_buttons">
+
+        <a href="{{ url_for('home.home') }}" class="hostel_home_button">
+             Home
+        </a>
+
+        <button type="button" class="hostel_back_button" onclick="history.back()">
+             Back
+        </button>
+
+    </div>
+
+</section>
+
+{% endblock %}

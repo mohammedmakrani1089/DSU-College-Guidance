@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% block title %}Campus Tour - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/campus tour.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="campus_tour_page">
+
+    <div class="campus_tour_header">
+        <span>DSU COLLEGE GUIDANCE</span>
+        <h1>Explore DSU Campus</h1>
+        <p>Explore the important places, facilities and learning spaces that make student life at Dr. Subhash University comfortable, practical and engaging.</p>
+    </div>
+
+    <div class="campus_tour_container">
+
+        <!-- 01 Main Entrance -->
+        <div class="campus_place">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu entrance.png') }}" alt="DSU Main Entrance">
+            </div>
+            <div class="campus_info">
+                <span>01</span>
+                <h2>Main Entrance</h2>
+                <p>Welcome to Dr. Subhash University! The grand main entrance sets the tone for a vibrant academic journey. Guarded round-the-clock with advanced security systems, it offers a safe and welcoming environment. From here, you step into a lush green, eco-friendly campus that seamlessly connects our state-of-the-art academic blocks, administrative offices, and lively student hubs.</p>
+            </div>
+        </div>
+
+        <!-- 02 Library -->
+        <div class="campus_place reverse">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu library.png') }}" alt="DSU Library">
+            </div>
+            <div class="campus_info">
+                <span>02</span>
+                <h2>Central Library</h2>
+                <p>The central library is the academic heart of DSU. Spread across a massive area, it offers a peaceful environment for focused study and deep research. It houses an extensive collection of textbooks, rare reference materials, national and international journals, and digital e-books. With high-speed Wi-Fi and comfortable reading zones, it is the perfect space for students to prepare for their future.</p>
+            </div>
+        </div>
+
+        <!-- 03 Classrooms -->
+        <div class="campus_place">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu classroom.png') }}" alt="DSU Classrooms">
+            </div>
+            <div class="campus_info">
+                <span>03</span>
+                <h2>Smart Classrooms</h2>
+                <p>Step into our modern, ergonomically designed classrooms. Equipped with smart boards, multimedia projectors, and high-speed internet, these tech-enabled learning spaces make lectures highly interactive. The spacious and well-ventilated rooms ensure a comfortable environment, allowing students and expert faculty to engage in dynamic discussions and collaborative learning.</p>
+            </div>
+        </div>
+
+        <!-- 04 Laboratories -->
+        <div class="campus_place reverse">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu laboratories.png') }}" alt="DSU Laboratories">
+            </div>
+            <div class="campus_info">
+                <span>04</span>
+                <h2>Advanced Laboratories</h2>
+                <p>At DSU, we believe in learning by doing. Our cutting-edge laboratories are equipped with the latest industry-standard machinery, tools, and testing equipment. Whether it's applied sciences, core engineering, or advanced research, these highly specialized labs allow students to bridge the gap between theoretical concepts and real-world practical applications under expert guidance.</p>
+            </div>
+        </div>
+
+        <!-- 05 Canteen -->
+        <div class="campus_place">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/canteen.jpg') }}" alt="DSU Canteen">
+            </div>
+            <div class="campus_info">
+                <span>05</span>
+                <h2>Cafeteria & Canteen</h2>
+                <p>The lively campus cafeteria is the ultimate student hangout spot! Maintaining strict hygiene standards, the spacious canteen serves a wide variety of delicious, freshly prepared, and affordable meals, snacks, and beverages. It's a vibrant space for students to unwind, socialize with friends, discuss projects over a cup of coffee, and recharge between intense academic sessions.</p>
+            </div>
+        </div>
+
+        <!-- 06 Sports -->
+        <div class="campus_place reverse">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu sports.png') }}" alt="DSU Sports Ground">
+            </div>
+            <div class="campus_info">
+                <span>06</span>
+                <h2>Sports & Grounds</h2>
+                <p>Physical fitness and teamwork are core parts of the DSU experience. Our sprawling campus features massive playgrounds dedicated to cricket, football, and volleyball, along with excellent facilities for indoor games like table tennis and chess. The university actively encourages students to participate in state-level tournaments and annual sports meets to maintain a healthy work-life balance.</p>
+            </div>
+        </div>
+
+        <!-- 07 Hostel -->
+        <div class="campus_place">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/hostel.jpg') }}" alt="DSU Hostel">
+            </div>
+            <div class="campus_info">
+                <span>07</span>
+                <h2>Campus Hostel</h2>
+                <p>Experience a true 'home away from home' at the DSU hostels. We offer secure, well-maintained, and fully furnished separate hostels for boys and girls right within the campus. With 24/7 security, high-speed Wi-Fi, clean drinking water, recreational common rooms, and a hygienic mess serving nutritious meals, students enjoy a comfortable and community-driven campus life.</p>
+            </div>
+        </div>
+
+        <!-- 08 Computer Center -->
+        <div class="campus_place reverse">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu computer.png') }}" alt="DSU Computer Center">
+            </div>
+            <div class="campus_info">
+                <span>08</span>
+                <h2>Computer Center</h2>
+                <p>Welcome to the digital hub of DSU. Our high-tech computer centers are packed with the latest workstations, high-end servers, and seamless broadband connectivity. Fully loaded with industry-specific software, compilers, and design tools, these air-conditioned labs provide the perfect environment for coding, software development, data analysis, and complex technical projects.</p>
+            </div>
+        </div>
+
+
+        <!-- 09 Workshop -->
+        <div class="campus_place">
+            <div class="campus_image">
+                <img src="{{ url_for('static', filename='campus/dsu workshop.png') }}" alt="DSU Workshop">
+            </div>
+            <div class="campus_info">
+                <span>09</span>
+                <h2>Industrial Workshop</h2>
+                <p>The central workshop is where engineering meets reality. Spanning a massive area, it houses specialized sections like the machine shop, welding, carpentry, and fitting areas. Equipped with heavy-duty industrial machines and advanced manufacturing tools, it gives students hands-on industrial exposure, ensuring they are technically proficient and industry-ready from day one.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 360° Campus Tour -->
+    <div class="campus_360">
+        <div class="campus_360_icon">🌐</div>
+        <span>VIRTUAL CAMPUS EXPERIENCE</span>
+        <h2>Explore DSU in 360°</h2>
+        <p>Take a virtual look at the DSU campus and explore locations such as the entrance, ground, classrooms, library, computer labs and specialized laboratories.</p>
+        <a href="https://www.google.co.in/maps/@21.5451908,70.4563064,3a,90y,242.05h,87.52t/data=!3m8!1e1!3m6!1s-LzFE6MggMpU%2FWWyohe4pEEI%2FAAAAAAABwiU%2FpaZfj1sMFq4sPXatSo3AAoRpDjFowecmwCLIBGAYYCw!2e4!3e12!6s%2F%2Flh5.ggpht.com%2F-LzFE6MggMpU%2FWWyohe4pEEI%2FAAAAAAABwiU%2FpaZfj1sMFq4sPXatSo3AAoRpDjFowecmwCLIBGAYYCw%2Fw900-h600-k-no-pi2.480000000000004-ya242.05-ro0-fo100%2F!7i6000!8i3000?entry=ttu&g_ep=EgoyMDI2MDkwNi4wIKXMDSoASAFQAw%3D%3D" 
+        target="_blank" class="campus_360_button">View 360° Campus Tour →</a>
+    </div>
+
+</section>
+
+{% endblock %}

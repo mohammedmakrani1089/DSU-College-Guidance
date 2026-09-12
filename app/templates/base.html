@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}DSU College Guidence{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/Navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/footer.css') }}">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/admission guide.css')}}">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/subject details.css')}}">
+    <link rel="stylesheet" href="{{url_for('static' , filename = 'css/student journey.css')}}">
+
+
+    {% block css%} {% endblock %}
+</head>
+<body>
+
+   {% block header %}
+   <header>
+    <div class="navbar-box">
+        <nav>
+
+        <div class="navbar-logo-box">
+
+            <a href="#" class="navbar-logo">
+            <img src="{{ url_for('static', filename='icon/DSU Logo.png') }}" alt="DSU-Logo ">
+            </a>
+            
+            <div class="navbar-text">
+                <h2>DSU College Guidence</h2>
+                <p>Dr Subhash University</p>
+            </div>
+        
+        </div>
+
+        <div class="navbar-links">
+            <a href="{{ url_for('home.home') }}" class="{% if request.endpoint == 'home.home' %}active{% endif %}">Home</a>
+            
+            <a href="{{ url_for('home.about_college') }}" class="{% if request.endpoint == 'home.about_college' %}active{% endif %}">About College</a>
+            
+            <a href="{{ url_for('home.campus_tour') }}" class="{% if request.endpoint == 'home.campus_tour' %}active{% endif %}">Campus Tour</a>
+            
+            <a href="{{ url_for('home.academics') }}" class="{% if request.endpoint == 'home.academics' %}active{% endif %}">Academics</a>
+            
+            <a href="{{ url_for('home.facilities') }}" class="{% if request.endpoint == 'home.facilities' %}active{% endif %}">Facilities</a>
+            
+            <a href="#" class="{% if request.endpoint == 'home.admission_guide' %}active{% endif %} admissionGuideBtn" >Admission Guide</a>
+            
+            <a href="{{ url_for('home.FAQ') }}" class="{% if request.endpoint == 'home.FAQ' %}active{% endif %}">FAQ</a>
+        </div>
+
+        <div class="navbar-actions">
+
+        <button class="get-started-button" type="button" id="getStartedBtn">Get Started</button>
+        
+
+        </div>
+
+        </nav>
+
+    </div>
+
+
+</header>
+{% endblock %}
+
+{% block content %} 
+
+{% endblock %}
+
+
+<!-- SUBJECT DETAILS POPUP -->
+<div class="subject_modal" id="subjectModal">
+    <div class="subject_popup">
+
+        <button type="button" class="subject_close" id="subjectClose">&times;</button>
+
+        <div class="subject_popup_icon"><img src="{{url_for('static' , filename = 'icon/books.png')}}" alt="subjects"></div>
+
+        <span class="subject_popup_label">SUBJECT DETAILS</span>
+
+        <h2>Find Your Subjects</h2>
+
+        <p>
+            Select your course and semester to view
+            your subjects and subject codes.
+        </p>
+
+        <form id="subjectForm"
+              method="POST"
+              action="{{url_for('home.subject_details')}}">
+
+            <div class="subject_form_group">
+                <label for="subjectCourse">Course</label>
+
+                <select id="subjectCourse" name="department_id" required>
+                    <option value="">Select your course</option>
+                    <option value="1">B.Tech - Information Technology</option>
+                    <option value="2">B.Tech - Computer Science & Engineering</option>
+                    <option value="3">B.Tech - Electrical Engineering</option>
+                    <option value="4">B.Tech - Mechanical Engineering</option>
+                    <option value="5">B.Tech - Civil Engineering</option>
+                    <option value="6">M.Tech - Information Technology</option>
+                    <option value="7">M.Tech - Computer Science & Engineering</option>
+                    <option value="8">M.Tech - Electrical Engineering</option>
+                    <option value="9">M.Tech - Mechanical Engineering</option>
+                    <option value="10">M.Tech - Civil Engineering</option>
+                    <option value="11">BCA</option>
+                    <option value="12">MCA</option>
+                    <option value="13">BBA</option>
+                    <option value="14">MBA</option>
+                    <option value="15">B.Pharm</option>
+                    <option value="16">M.Pharm</option>
+                    <option value="17">B.Com</option>
+                    <option value="18">M.Com</option>
+                    <option value="19">B.Sc</option>
+                    <option value="20">M.Sc</option>
+                    <option value="21">B.A</option>
+                    <option value="22">M.A</option>
+                    <option value="23">Diploma - Information Technology</option>
+                    <option value="24">Diploma - Computer Science & Engineering</option>
+                    <option value="25">Diploma - Mechanical Engineering</option>
+                    <option value="26">Diploma - Electrical Engineering</option>
+                    <option value="27">Diploma - Civil Engineering</option>
+                </select>
+            </div>
+
+            <div class="subject_form_group">
+                <label for="subjectSemester">Semester</label>
+
+                <select id="subjectSemester" name="semester" required>
+                    <option value="">Select semester</option>
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                </select>
+            </div>
+
+            <button type="submit" class="subject_view_button">
+                View Subjects →
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+<!-- ------ Admission Guide PopUp ------ -->
+
+<div class="admission_guide_popup" id="admissionModal">
+
+    <div class="admission_guide_con">
+
+        <div class="logos">
+        <img src="{{url_for('static',filename = 'icon/guide.png')}}" alt="guide">
+        <button type="button" class="admission_close" id="admissionClose">
+            &times;
+        </button>
+        </div>
+
+        <div class="header">
+        <h2>Select Cource </h2>
+
+        <p>Select Cource To View Details And Information About That Eligibility,Documents... etc.</p>
+        </div>
+
+        <form method="GET" action="{{url_for('home.admission_guide')}}">
+            <div class="cource_container">
+            <label for="admissionCourse">Cources</label>
+            <select name="department_id" id="admissionCourse" required>
+
+                    <option value="">Select Your Course</option>
+                    <option value="1">B.Tech - Information Technology</option>
+                    <option value="2">B.Tech - Computer Science & Engineering</option>
+                    <option value="3">B.Tech - Electrical Engineering</option>
+                    <option value="4">B.Tech - Mechanical Engineering</option>
+                    <option value="5">B.Tech - Civil Engineering</option>
+                    <option value="6">M.Tech - Information Technology</option>
+                    <option value="7">M.Tech - Computer Science & Engineering</option>
+                    <option value="8">M.Tech - Electrical Engineering</option>
+                    <option value="9">M.Tech - Mechanical Engineering</option>
+                    <option value="10">M.Tech - Civil Engineering</option>
+                    <option value="11">BCA</option>
+                    <option value="12">MCA</option>
+                    <option value="13">BBA</option>
+                    <option value="14">MBA</option>
+                    <option value="15">B.Pharm</option>
+                    <option value="16">M.Pharm</option>
+                    <option value="17">B.Com</option>
+                    <option value="18">M.Com</option>
+                    <option value="19">B.Sc</option>
+                    <option value="20">M.Sc</option>
+                    <option value="21">B.A</option>
+                    <option value="22">M.A</option>
+                    <option value="23">Diploma - Information Technology</option>
+                    <option value="24">Diploma - Computer Science & Engineering</option>
+                    <option value="25">Diploma - Mechanical Engineering</option>
+                    <option value="26">Diploma - Electrical Engineering</option>
+                    <option value="27">Diploma - Civil Engineering</option>
+
+            </select>
+            </div>
+
+            <button type="submit" class="common_button">
+                View Admission Details →
+            </button>
+
+        </form>
+    </div>
+</div>
+
+
+
+<!-- =========================
+     NEW STUDENT JOURNEY
+========================= -->
+
+<div class="student_journey_modal" id="studentJourneyModal">
+
+    <div class="student_journey_box">
+
+        <!-- JOURNEY HEADER -->
+
+        <div class="student_journey_header">
+
+            <div>
+                <span>DSU STUDENT JOURNEY</span>
+                <h2>Start Your Journey At DSU</h2>
+                <p>
+                    Follow a few simple steps to explore your academic journey,
+                    admission information and campus experience.
+                </p>
+            </div>
+
+            <button type="button" class="student_journey_close" id="studentJourneyClose">
+                &times;
+            </button>
+
+        </div>
+
+
+        <!-- PROGRESS -->
+
+        <div class="student_journey_progress">
+
+            <div class="journey_progress_step active" data-step="1">
+                <span>01</span>
+                <p>Student Profile</p>
+            </div>
+
+            <div class="journey_progress_line"></div>
+
+            <div class="journey_progress_step" data-step="2">
+                <span>02</span>
+                <p>Your Subjects</p>
+            </div>
+
+            <div class="journey_progress_line"></div>
+
+            <div class="journey_progress_step" data-step="3">
+                <span>03</span>
+                <p>Admission Guide</p>
+            </div>
+
+            <div class="journey_progress_line"></div>
+
+            <div class="journey_progress_step" data-step="4">
+                <span>04</span>
+                <p>Campus Preview</p>
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STEP 1
+        ========================= -->
+
+        <div class="journey_step active" id="journeyStep1">
+
+            <div class="journey_step_content">
+
+                <span>STEP 01</span>
+
+                <h2>Welcome To DSU 👋</h2>
+
+                <p>
+                    Tell us a little about yourself so we can create a more
+                    personalized student journey for you.
+                </p>
+
+            </div>
+
+            <div class="journey_form">
+
+                <div class="journey_form_group">
+                    <label for="journeyStudentName">Your Name</label>
+
+                    <input
+                        type="text"
+                        id="journeyStudentName"
+                        name="student_name"
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+
+
+                <div class="journey_form_group">
+                    <label for="journeyCourse">Your Course</label>
+
+                    <select id="journeyCourse" name="course" required>
+
+                        <option value="">Select Your Course</option>
+
+                        <option value="1">B.Tech - Information Technology</option>
+                        <option value="2">B.Tech - Computer Science & Engineering</option>
+                        <option value="3">B.Tech - Electrical Engineering</option>
+                        <option value="4">B.Tech - Mechanical Engineering</option>
+                        <option value="5">B.Tech - Civil Engineering</option>
+
+                        <option value="6">M.Tech - Information Technology</option>
+                        <option value="7">M.Tech - Computer Science & Engineering</option>
+                        <option value="8">M.Tech - Electrical Engineering</option>
+                        <option value="9">M.Tech - Mechanical Engineering</option>
+                        <option value="10">M.Tech - Civil Engineering</option>
+
+                        <option value="11">BCA</option>
+                        <option value="12">MCA</option>
+                        <option value="13">BBA</option>
+                        <option value="14">MBA</option>
+                        <option value="15">B.Pharm</option>
+                        <option value="16">M.Pharm</option>
+                        <option value="17">B.Com</option>
+                        <option value="18">M.Com</option>
+                        <option value="19">B.Sc</option>
+                        <option value="20">M.Sc</option>
+                        <option value="21">B.A</option>
+                        <option value="22">M.A</option>
+
+                        <option value="23">Diploma - Information Technology</option>
+                        <option value="24">Diploma - Computer Science & Engineering</option>
+                        <option value="25">Diploma - Mechanical Engineering</option>
+                        <option value="26">Diploma - Electrical Engineering</option>
+                        <option value="27">Diploma - Civil Engineering</option>
+
+                    </select>
+                </div>
+
+
+                <div class="journey_form_group">
+                    <label for="journeySemester">Your Semester</label>
+
+                    <select id="journeySemester" name="semester" required>
+
+                        <option value="">Select Semester</option>
+                        <option value="1">Semester 1</option>
+                        <option value="2">Semester 2</option>
+
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="journey_step_actions">
+
+                <button type="button"
+                        class="journey_next_button"
+                        id="journeyStep1Next">
+                    Continue →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STEP 2
+        ========================= -->
+
+        <div class="journey_step" id="journeyStep2">
+
+            <div class="journey_step_content">
+
+                <span>STEP 02</span>
+
+                <h2 id="journeySubjectsTitle">
+                    Your Academic Journey
+                </h2>
+
+                <p id="journeySubjectsIntro">
+                    Here are the subjects you can expect to study in your
+                    selected course and semester at DSU.
+                </p>
+
+            </div>
+
+
+            <div class="journey_student_summary">
+
+                <div>
+                    <span>STUDENT</span>
+                    <strong id="journeyDisplayName">Student Name</strong>
+                </div>
+
+                <div>
+                    <span>COURSE</span>
+                    <strong id="journeyDisplayCourse">Course</strong>
+                </div>
+
+                <div>
+                    <span>SEMESTER</span>
+                    <strong id="journeyDisplaySemester">Semester</strong>
+                </div>
+
+            </div>
+
+
+            <div class="journey_subjects">
+
+                <div class="journey_subject_header">
+                    <span>YOUR SUBJECTS</span>
+                    <h3>Semester Subjects</h3>
+                    <p id="journeySubjectsMessage">
+                        Your subjects will appear here.
+                    </p>
+                </div>
+
+                <div class="journey_subject_list" id="journeySubjectList">
+
+                </div>
+
+            </div>
+
+
+            <div class="journey_step_actions">
+
+                <button type="button"
+                        class="journey_back_button"
+                        id="journeyStep2Back">
+                    ← Back
+                </button>
+
+                <button type="button"
+                        class="journey_next_button"
+                        id="journeyStep2Next">
+                    Admission Guide →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STEP 3
+        ========================= -->
+
+        <div class="journey_step" id="journeyStep3">
+
+            <div class="journey_step_content">
+
+                <span>STEP 03</span>
+
+                <h2>Admission Guide</h2>
+
+                <p>
+                    Get important admission information related to your
+                    selected course before starting your academic journey.
+                </p>
+
+            </div>
+
+
+            <div class="journey_admission_card">
+
+                <div class="journey_admission_card_header">
+
+                    <span>YOUR COURSE</span>
+
+                    <h3 id="journeyAdmissionCourse">
+                        Selected Course
+                    </h3>
+
+                </div>
+
+
+                <div class="journey_admission_grid">
+
+                    <div>
+                        <span>ELIGIBILITY</span>
+                        <p id="journeyEligibility">
+                            Admission eligibility information will appear here.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>DOCUMENTS</span>
+                        <p id="journeyDocuments">
+                            Required documents will appear here.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>FEES</span>
+                        <p id="journeyFees">
+                            Course fee information will appear here.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span>SCHOLARSHIP</span>
+                        <p id="journeyScholarship">
+                            Scholarship information will appear here.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <a href="#"
+                    class="journey_admission_button"
+                    id="journeyAdmissionButton">
+                        View Full Admission Guide →
+                </a>
+
+            </div>
+
+
+            <div class="journey_step_actions">
+
+                <button type="button"
+                        class="journey_back_button"
+                        id="journeyStep3Back">
+                    ← Back
+                </button>
+
+                <button type="button"
+                        class="journey_next_button"
+                        id="journeyStep3Next">
+                    Explore Campus →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             STEP 4
+        ========================= -->
+
+        <div class="journey_step" id="journeyStep4">
+
+            <div class="journey_step_content">
+
+                <span>STEP 04</span>
+
+                <h2>Explore Your Campus</h2>
+
+                <p>
+                    Take a quick look at some of the places and facilities
+                    that make campus life at DSU more engaging.
+                </p>
+
+            </div>
+
+
+            <div class="journey_campus_preview">
+
+                <div class="journey_campus_image">
+                    <img
+                        src="{{ url_for('static', filename='campus/dsu image3.png') }}"
+                        alt="DSU Sports Ground"
+                    >
+                </div>
+
+                <div class="journey_campus_image">
+                    <img
+                        src="{{ url_for('static', filename='campus/dsu classroom.png') }}"
+                        alt="DSU Classrooms"
+                    >
+                </div>
+
+
+                <div class="journey_campus_image">
+                    <img
+                        src="{{ url_for('static', filename='campus/dsu library.png') }}"
+                        alt="DSU Library"
+                    >
+                </div>
+
+                <div class="journey_campus_image">
+                    <img
+                        src="{{ url_for('static', filename='campus/dsu computer.png') }}"
+                        alt="DSU Canteen"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="journey_campus_message">
+
+                <h3>Discover More Of DSU</h3>
+
+                <p>
+                    Explore the library, classrooms, sports facilities,
+                    canteen, laboratories, hostel and other important
+                    campus locations in detail.
+                </p>
+
+            </div>
+
+
+            <div class="journey_step_actions">
+
+                <button type="button"
+                        class="journey_back_button"
+                        id="journeyStep4Back">
+                    ← Back
+                </button>
+
+                <a href="{{ url_for('home.campus_tour') }}"
+                   class="journey_explore_button">
+                    Explore Campus →
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% block footer %} 
+
+<footer class="footer">
+    <div class="footer-top">
+
+        <!-- Column 2: Contact Us -->
+        <div class="footer-col">
+            <h5>Contact Us</h5>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
+                <p>+91 12345 67890</p>
+            </div>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
+                <p>info@dsu.ac.in</p>
+            </div>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/map-pin.png') }}" alt="location">
+                <p>Dr. Subhash University,<br>Junagadh, Gujarat, India</p>
+            </div>
+        </div>
+        
+
+        <!-- Column 3: Quick Links -->
+        <div class="footer-col">
+            <h5>Quick Links</h5>
+            <a href="{{url_for('home.home')}}">Home </a>
+            <a href="#">About Us</a>
+            <a href="{{url_for('home.about_college')}}">About College</a>
+        </div>
+
+        <!-- Column 1: Emergency Contact -->
+        <div class="footer-col">
+            <h5>Emergency Contact</h5>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
+                <p>+91 98765 43210</p>
+            </div>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
+                <p>emergency@dsu.ac.in</p>
+            </div>
+            <div class="footer-contact-item">
+                <img src="{{ url_for('static', filename='icon/24-hours-support.png') }}" alt="time">
+                <p>24x7 Helpline</p>
+            </div>
+        </div>
+
+
+        <!-- Column 4: Follow Us -->
+        <div class="footer-col">
+            <h5 style="text-align: center;">Follow Us</h5>
+            <div class="social-logos">
+                <!-- Inko bhi tum chaho to <img> se replace kar sakte ho -->
+                <img src="{{ url_for('static', filename='icon/communication.png') }}" alt="" class="social-icon fb">
+                <img src="{{ url_for('static', filename='icon/instagram.png') }}" alt="" class="social-icon fb">
+                <img src="{{ url_for('static', filename='icon/youtube.png') }}" alt="" class="social-icon fb">
+                <div class="social-icon linkedin">in</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bottom Footer (Copyright & Policies) -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 DSU College Guidance. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+            <span class="divider">|</span>
+            <a href="#">Privacy Policy</a>
+            <span class="divider">|</span>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </div>
+</footer>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{url_for('static', filename='js/admission_guide.js')}}"></script>
+<script src="{{ url_for('static', filename='js/placement.js') }}"></script>
+<script src="{{url_for('static', filename='js/subject_details.js')}}"></script>
+<script src="{{ url_for('static', filename='js/FAQ.js') }}"></script>
+<script src="{{ url_for('static', filename='js/events.js') }}"></script>
+<script src="{{ url_for('static', filename='js/club.js') }}"></script>
+<script src="{{ url_for('static', filename='js/student_journey.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tips and tricks.js') }}"></script>
+{% endblock%}
+
+</body>
+
+</html>

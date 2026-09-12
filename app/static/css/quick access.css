@@ -1,0 +1,83 @@
+
+
+
+
+/* --- Main Quick Access Container --- */
+.quick {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 40px; 
+    border: 1px solid #f1f5f9;
+    border-radius: 16px; /* Thode aur gol kinare (rounded corners) */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding-bottom: 20px;
+}
+
+/* --- Heading Styling --- */
+.quick h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a; 
+    margin-top: 15px;
+    margin-bottom: 25px;
+    align-self: center; 
+}
+
+/* --- Cards Container --- */
+.quick_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+/* --- Individual Card Styling ---*/
+.cards {
+    background-color: #ffffff; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 120px; 
+    height: 120px; 
+    padding: 15px 10px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    border: 1px solid #f1f5f9; 
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    text-decoration: none;
+}
+
+
+.cards:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 12px 25px rgba(11, 85, 235, 0.15); 
+    border-color: rgb(11, 85, 235); 
+    background-color: #f3f4f6;
+}
+
+/* --- Icons --- */
+.cards img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 12px;
+    transition: transform 0.4s ease;
+}
+
+.cards:hover img {
+    transform: scale(1.1); 
+}
+
+/* --- Card Text --- */
+.cards p {
+    font-size: 14px;
+    font-weight: 600; 
+    color: #334155;
+    margin: 0;
+    line-height: 1.2;
+}
+

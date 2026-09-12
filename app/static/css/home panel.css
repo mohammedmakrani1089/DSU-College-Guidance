@@ -1,0 +1,287 @@
+/* =========================
+   NOTICE SECTION
+========================= */
+.two_container{
+    display: flex;
+    margin: 0px 30px;
+    gap: 40px;
+}
+.notice_container {
+
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    padding: 15px 20px;
+    min-width: 400px;
+    min-height: 300px;
+    margin-bottom: 10px;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+
+}
+
+.heading img{
+    width: 18px;
+    height: 18px;
+}
+
+/* Heading + View All */
+
+.notice_container h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #0f172a;
+}
+
+.notice_container h4 a {
+    text-decoration: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.notice_container h4 a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   NOTICE CARDS CONTAINER
+========================= */
+
+.notice_subcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   NOTICE CARD
+========================= */
+
+.notices {
+    display: flex;
+    flex-direction: column;
+
+    width: 350px;
+    height: 70px;
+    padding: 5px 10px;
+
+    background-color: white;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.notices:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(11, 85, 235, 0.08);
+    border-color: rgb(11, 85, 235);
+}
+
+
+/* Notice Date */
+
+.notices p:first-child {
+    font-size: 10px;
+    color: #2563eb;
+    font-weight: 500;
+    padding: 3px 0px;
+}
+
+
+/* Notice Title */
+
+.notices h3{
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    line-height: 1.1;
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+
+/* Notice Description */
+
+.notices p:nth-child(3) {
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+.readmore{
+    font-size: 11px;
+    font-weight: 600;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* --- Main Container Adjustments --- */
+.get_started_container {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-bottom: 10px;
+    flex: 1; /* Ye usko right side ki poori remaining width lene me help karega */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+} 
+
+/* --- Header Section --- */
+.journey_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px 65px 10px;
+}
+
+.journey_title_group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.journey_main_icon {
+    color: rgb(11, 85, 235);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.journey_main_icon img {
+    width: 32px;
+    height: 32px;
+}
+
+.journey_text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 4px 0;
+}
+
+.journey_text p {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Button */
+.btn-start {
+    display: inline-flex;
+    background-color: rgb(11, 85, 235);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid rgb(11, 85, 235);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.5s ease;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.btn-start:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    color: rgb(11, 85, 235);
+    box-shadow: 0 10px 25px rgba(11, 85, 235, 0.2);
+}
+
+/* --- Timeline Wrapper & Background Line --- */
+.timeline_wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 10px;
+}
+
+/* The Magic Dotted Line */
+.dotted_line_bg {
+    position: absolute;
+    top: 30px; /* Circle ke exactly beech me align karne ke liye */
+    left: 8%;
+    right: 8%;
+    height: 2px;
+    border-top: 2px dashed #cbd5e1;
+    z-index: 1; /* Isko peeche rakhne ke liye */
+}
+
+/* --- Individual Steps --- */
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Dotted line ke upar aane ke liye */
+    width: 100px;
+}
+
+.icon_circle {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid transparent; /* Default placeholder */
+}
+
+.icon_circle img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* Custom Colors for each Circle Boundary */
+.border-blue { border-color: #3b82f6; box-shadow: 0 0 10px rgba(59, 130, 246, 0.1); }
+.border-green { border-color: #f59e0b; box-shadow: 0 0 10px rgba(16, 185, 129, 0.1); }
+.border-orange { border-color: #10b981; box-shadow: 0 0 10px rgba(245, 158, 11, 0.1); }
+.border-purple { border-color: #f43f5e; box-shadow: 0 0 10px rgba(139, 92, 246, 0.1); }
+.border-pink { border-color: #8b5cf6; box-shadow: 0 0 10px rgba(244, 63, 94, 0.1); }
+
+/* The Number Badge */
+.step_num {
+    width: 22px;
+    height: 22px;
+    background-color: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    margin-top: -11px; /* Ye trick number ko circle par overlap karati hai */
+    z-index: 3;
+    border: 2px solid white; /* Background se separate dikhane ke liye */
+}
+
+.step p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #334155;
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.3;
+}

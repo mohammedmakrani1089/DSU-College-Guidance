@@ -1,0 +1,546 @@
+{% extends 'base.html' %}
+
+{% block title %}Events - DSU College Guidance{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/events.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/club.css') }}">
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+    {% if messages %}
+
+        {% for category, message in messages %}
+
+        <div class="registration_success_modal" id="registrationSuccessModal">
+
+            <div class="registration_success_popup">
+
+                <button type="button" class="registration_success_close" id="registrationSuccessClose">
+                    &times;
+                </button>
+
+                <div class="registration_success_icon">
+                    ✓
+                </div>
+
+                <span>CLUB REGISTRATION</span>
+
+                <h2>Registration Successful!</h2>
+
+                <p>
+                    {{ message }}
+                </p>
+
+                <button type="button" class="registration_success_button" id="registrationSuccessButton">
+                    Continue
+                </button>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% endif %}
+
+{% endwith %}
+
+<section class="events_page">
+
+    <!-- HEADER -->
+    <div class="events_header">
+        <span class="header_badge">DSU COLLEGE GUIDANCE</span>
+        <h1>Events &amp; Celebrations</h1>
+        <p>
+            Explore cultural fests, sports tournaments, technical symposiums, and vibrant celebrations
+            that make campus life at Dr. Subhash University engaging and unforgettable.
+        </p>
+    </div>
+
+    <!-- 5-BOX DSU GRID -->
+    <div class="events_layout">
+
+        <!-- 01 EVENT INFORMATION -->
+        <div class="event_box event_information">
+            <span class="box_index">01</span>
+            <small class="box_kicker">DISCOVER CAMPUS LIFE</small>
+            <h2>More Than Just Academics</h2>
+
+            <p>
+                University life at DSU extends far beyond classrooms and exams. Our events provide 
+                a platform to showcase talent, lead initiatives, compete at university levels, 
+                and build lifelong memories with peers.
+            </p>
+
+            <p>
+                Students participate in round-the-year activities organized by clubs, societies, 
+                and university departments across multiple domains.
+            </p>
+
+            <div class="event_info_highlights">
+                <div class="info_highlight_card">
+                    <span class="highlight_icon">🎭</span>
+                    <strong>Cultural</strong>
+                    <small>Fests &amp; Arts</small>
+                </div>
+                <div class="info_highlight_card">
+                    <span class="highlight_icon">🏆</span>
+                    <strong>Sports</strong>
+                    <small>Inter-College</small>
+                </div>
+                <div class="info_highlight_card">
+                    <span class="highlight_icon">💻</span>
+                    <strong>Technical</strong>
+                    <small>Hackathons</small>
+                </div>
+                <div class="info_highlight_card">
+                    <span class="highlight_icon">🎉</span>
+                    <strong>Celebrations</strong>
+                    <small>Tradition &amp; Joy</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- 02 EVENT PHOTO SLIDER -->
+        <div class="event_box event_photo_slider">
+            <span class="box_index">02</span>
+            <small class="box_kicker">CAMPUS GLIMPSES</small>
+
+            <div class="event_slider">
+                {% for event in slider_events %}
+                <div class="event_slide {% if loop.first %}active{% endif %}">
+                    <img
+                        src="{{ url_for('static', filename = 'events/' + event.IMAGE) }}"
+                        alt="{{ event.EVENT_NAME }}"
+                    >
+                    <div class="event_slide_content">
+                        
+                        <h2>{{ event.EVENT_NAME }}</h2>
+                        <p>{{ event.DESCRIPTION }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Slider Dots (Preserved for events.js) -->
+            <div class="event_slider_dots">
+                {% for event in slider_events %}
+                <button
+                    type="button"
+                    class="{% if loop.first %}active{% endif %}">
+                </button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- 03 UPCOMING EVENTS -->
+        <div class="event_box upcoming_events">
+            <span class="box_index">03</span>
+
+            <div class="event_box_heading">
+                <div>
+                    <small class="box_kicker">WHAT'S COMING</small>
+                    <h2>Upcoming Events</h2>
+                </div>
+                <span class="live_pulse_badge">Active Schedule</span>
+            </div>
+
+            <div class="upcoming_event_list">
+                {% for event in upcoming_events[:5] %}
+                <div class="upcoming_event_item">
+                    <div class="event_date">
+                        <strong>{{ event.EVENT_DATE.strftime('%d') }}</strong>
+                        <span>{{ event.EVENT_DATE.strftime('%b') }}</span>
+                    </div>
+                    <div class="upcoming_event_info">
+                        <h3>{{ event.EVENT_NAME }}</h3>
+                        <p>📍 {{ event.LOCATION }}</p>
+                    </div>
+                    <span class="event_arrow">&rarr;</span>
+                </div>
+                {% else %}
+                <p class="no_events">
+                    No upcoming events scheduled right now. Check back soon!
+                </p>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- 04 EVENT GALLERY -->
+        <div class="event_box event_gallery">
+            <span class="box_index">04</span>
+
+            <div class="event_box_heading">
+                <div>
+                    <small class="box_kicker">EVENT MOMENTS</small>
+                    <h2>Event Gallery</h2>
+                    <p class="gallery_desc">
+                        Relive the most memorable glimpses of student life at DSU—from high-energy sports tournaments 
+                        and grand cultural fests to innovative technical expos and vibrant festive celebrations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="gallery_grid">
+                {% for event in gallery_events %}
+                <div class="gallery_item">
+                    <img
+                        src="{{ url_for('static', filename = 'events/' + event.IMAGE) }}"
+                        alt="{{ event.EVENT_NAME }}"
+                    >
+                    <div class="gallery_overlay">
+                        <span>{{ event.EVENT_NAME }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- 05 EVENT CATEGORIES (ENRICHED & DETAILED) -->
+        <div class="event_box event_categories">
+            <span class="box_index">05</span>
+            <small class="box_kicker">EXPLORE EVENTS</small>
+            <h2>Something For Everyone</h2>
+            <p>
+                From competitive sports leagues and coding hackathons to festive galas, 
+                every domain gives students a chance to lead, participate, and build community.
+            </p>
+
+            <!-- Detailed 2x3 Grid with Descriptions -->
+            <div class="event_category_grid">
+                <div class="category_card">
+                    <div class="cat_icon blue">🎭</div>
+                    <div class="cat_details">
+                        <h4>Cultural Fests</h4>
+                        <p>Dance, drama, singing &amp; annual stage performances.</p>
+                    </div>
+                </div>
+
+                <div class="category_card">
+                    <div class="cat_icon green">🏆</div>
+                    <div class="cat_details">
+                        <h4>Sports Tournaments</h4>
+                        <p>Inter-department cricket, football &amp; indoor sports.</p>
+                    </div>
+                </div>
+
+                <div class="category_card">
+                    <div class="cat_icon blue">💻</div>
+                    <div class="cat_details">
+                        <h4>Technical Expos</h4>
+                        <p>Hackathons, project exhibits &amp; coding challenges.</p>
+                    </div>
+                </div>
+
+                <div class="category_card">
+                    <div class="cat_icon green">🎨</div>
+                    <div class="cat_details">
+                        <h4>Arts &amp; Design</h4>
+                        <p>Poster making, exhibitions &amp; photography competitions.</p>
+                    </div>
+                </div>
+
+                <div class="category_card">
+                    <div class="cat_icon blue">🎊</div>
+                    <div class="cat_details">
+                        <h4>Festivals</h4>
+                        <p>Navratri garba, kite fest &amp; cultural heritage days.</p>
+                    </div>
+                </div>
+
+                <div class="category_card">
+                    <div class="cat_icon green">🎓</div>
+                    <div class="cat_details">
+                        <h4>University Days</h4>
+                        <p>Freshers, farewells, orientation &amp; annual day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STUDENT CLUBS
+========================= -->
+
+<section class="clubs_section">
+
+    <div class="clubs_header">
+        <span>STUDENT LIFE AT DSU</span>
+        <h2>Explore Student Clubs</h2>
+        <p>
+            Join a club, explore your interests, develop new skills and
+            participate in exciting events, workshops and competitions.
+        </p>
+    </div>
+
+    <div class="clubs_grid">
+
+        <!-- 01 Coding, AI & Technology -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/coding.png') }}" alt="Coding AI and Technology Club">
+            </div>
+
+            <div class="club_content">
+                <span>01</span>
+                <h3>Coding, AI & Technology Club</h3>
+                <p>
+                    A technology-focused club where students can explore
+                    coding, artificial intelligence, robotics, blockchain,
+                    cloud computing and other emerging technologies through
+                    learning activities, projects and competitions.
+                </p>
+            </div>
+        </div>
+
+        <!-- 02 Robotics -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/robotics.jpg') }}" alt="Robotics CAD CAM and Automation Club">
+            </div>
+
+            <div class="club_content">
+                <span>02</span>
+                <h3>Robotics, CAD/CAM & Automation Club</h3>
+                <p>
+                    A practical club focused on robotics, CAD/CAM and
+                    automation. Students can develop technical skills,
+                    understand practical systems and work on projects related
+                    to engineering and automation.
+                </p>
+            </div>
+        </div>
+
+        <!-- 03 Research -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/research-club.jpg') }}" alt="Research and Innovation Club">
+            </div>
+
+            <div class="club_content">
+                <span>03</span>
+                <h3>Research & Innovation Club</h3>
+                <p>
+                    A platform for students interested in research,
+                    innovation, publication and project development. The club
+                    encourages students to explore ideas, work on projects and
+                    develop solutions to practical problems.
+                </p>
+            </div>
+        </div>
+
+        <!-- 04 Creative Arts -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/creative.jpg') }}" alt="Creative Arts Club">
+            </div>
+
+            <div class="club_content">
+                <span>04</span>
+                <h3>Creative Arts Club</h3>
+                <p>
+                    A creative space for students interested in music, dance,
+                    theatre and other artistic activities. Students can
+                    showcase their creativity, participate in performances and
+                    contribute to cultural programmes.
+                </p>
+            </div>
+        </div>
+
+        <!-- 05 Activity Club -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/activity.jpg') }}" alt="Activity Club">
+            </div>
+
+            <div class="club_content">
+                <span>05</span>
+                <h3>Activity Club</h3>
+                <p>
+                    A student-focused club for quizzes, competitions,
+                    workshops, discussions, celebrations and other engaging
+                    activities. It gives students opportunities to participate,
+                    interact with others and build confidence.
+                </p>
+            </div>
+        </div>
+
+        <!-- 06 Sports -->
+        <div class="club_card">
+            <div class="club_image">
+                <img src="{{ url_for('static', filename='icon/sports.jpg') }}" alt="Sports Club">
+            </div>
+
+            <div class="club_content">
+                <span>06</span>
+                <h3>Sports Club</h3>
+                <p>
+                    A club for students who enjoy sports, fitness and
+                    competitive activities. Students can participate in sports
+                    such as cricket, football, volleyball, badminton, chess and
+                    other games according to the opportunities available on
+                    campus.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Common Registration -->
+    <div class="club_registration_box">
+
+        <div class="club_registration_content">
+            <span>JOIN A STUDENT CLUB</span>
+            <h2>Find Your Interest. Join Your Community.</h2>
+            <p>
+                Choose a club according to your interests and become part of
+                student activities, events, workshops and competitions at DSU.
+                Registration is open to students.
+            </p>
+        </div>
+
+        <button type="button" class="club_register_button" id="clubRegisterBtn">
+            Register For A Club →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CLUB REGISTRATION POPUP
+========================= -->
+
+<div class="club_registration_modal" id="clubRegistrationModal">
+
+    <div class="club_registration_popup">
+
+        <div class="club_popup_header">
+
+            <div>
+                <span>STUDENT CLUBS</span>
+                <h2>Join A Student Club</h2>
+                <p>
+                    Enter your details and choose the club you would like
+                    to join at DSU.
+                </p>
+            </div>
+
+            <button type="button" class="club_popup_close" id="clubPopupClose">
+                &times;
+            </button>
+
+        </div>
+
+        <form id="clubRegistrationForm"
+              method = "POST"
+              action="{{url_for('home.club_registration')}}">
+
+            <div class="club_form_group">
+                <label for="studentName">Student Name</label>
+                <input
+                    type="text"
+                    id="studentName"
+                    name="student_name"
+                    placeholder="Enter your full name"
+                    required
+                >
+            </div>
+
+            <div class="club_form_group">
+                <label for="studentEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="studentEmail"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="club_form_row">
+
+                <div class="club_form_group">
+                    <label for="studentCourse">Course</label>
+                    <input
+                        type="text"
+                        id="studentCourse"
+                        name="course"
+                        placeholder="Enter your course"
+                        required
+                    >
+                </div>
+
+                <div class="club_form_group">
+                    <label for="studentSemester">Semester</label>
+                    <input
+                        type="number"
+                        id="studentSemester"
+                        name="semester"
+                        min="1"
+                        max="8"
+                        placeholder="Semester"
+                        required
+                    >
+                </div>
+
+            </div>
+
+            <div class="club_form_group">
+                <label for="studentClub">Select Club</label>
+
+                <select id="studentClub" name="club_name" required>
+
+                    <option value="">Choose your club</option>
+                    <option value="Coding, AI & Technology Club">
+                        Coding, AI & Technology Club
+                    </option>
+                    <option value="Robotics, CAD/CAM & Automation Club">
+                        Robotics, CAD/CAM & Automation Club
+                    </option>
+                    <option value="Research & Innovation Club">
+                        Research & Innovation Club
+                    </option>
+                    <option value="Creative Arts Club">
+                        Creative Arts Club
+                    </option>
+                    <option value="Activity Club">
+                        Activity Club
+                    </option>
+                    <option value="Sports Club">
+                        Sports Club
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="club_form_actions">
+
+                <button type="button" class="club_cancel_button" id="clubPopupCancel">
+                    Cancel
+                </button>
+
+                <button type="submit" class="club_submit_button">
+                    Submit Registration →
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,282 @@
+/* =========================================
+   CAMPUS TOUR - COMPACT PREMIUM UI
+========================================= */
+.campus_tour_page {
+    width: 92%;
+    max-width: 1100px; /* Thoda narrow kiya taaki compact lage */
+    margin: 50px auto 80px;
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================================
+   ELEGANT HEADER (INDIGO THEME)
+========================================= */
+.campus_tour_header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.campus_tour_header span {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #e0e7ff; /* Soft Indigo background */
+    color: #4338ca; /* Deep Indigo text */
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.campus_tour_header h1 {
+    margin: 0 0 12px;
+    color: #1e1b4b; /* Very dark rich indigo */
+    font-size: 38px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+}
+
+.campus_tour_header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14.5px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   COMPACT LEFT-RIGHT CARDS
+========================================= */
+.campus_tour_container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Cards ke beech compact gap */
+}
+
+.campus_place {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 barabar hisse */
+    align-items: center; /* Image aur text ko center me rakhega */
+    gap: 35px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+    transition: all 0.3s ease;
+}
+
+/* Hover par subtle lift aur shadow */
+.campus_place:hover {
+    transform: translateY(-4px);
+    border-color: #0a39f5;
+    box-shadow: 0 15px 35px rgba(67, 56, 202, 0.08);
+}
+
+/* LEFT-RIGHT PATTERN (REVERSE) */
+.campus_place.reverse .campus_image {
+    order: 2; /* Reverse card me image right me jayegi */
+}
+.campus_place.reverse .campus_info {
+    order: 1; /* Text left me aayega */
+}
+
+/* =========================================
+   IMAGE - STRICTLY 220PX ELEGANT SIZE
+========================================= */
+.campus_image {
+    width: 100%;
+    height: 220px; /* 200px se 230px ki demand perfectly met! */
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f8fafc;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05); /* Premium inner border */
+}
+
+.campus_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.campus_place:hover .campus_image img {
+    transform: scale(1.04); /* Halki si zoom animation */
+}
+
+/* =========================================
+   TEXT SECTION - RESIZED FOR 220PX IMAGE
+========================================= */
+.campus_info {
+    padding: 10px;
+}
+
+/* Number Badges (Fresh Colors!) */
+.campus_info span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    
+    /* Fresh Premium Indigo Gradient */
+    background: linear-gradient(135deg, #1417ca, #1500ffc5);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(67, 56, 202, 0.2);
+}
+
+/* Reverse cards (02, 04) ko Ekdum mast Emerald/Teal color diya hai */
+.campus_place.reverse .campus_info span {
+    background: linear-gradient(135deg, #14b8a6, #0f766e);
+    box-shadow: 0 6px 15px rgba(20, 184, 166, 0.2);
+}
+
+.campus_info h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 22px; /* Font size chota kiya taaki 220px image ke sath balance lage */
+    font-weight: 750;
+}
+
+.campus_info p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+/* =========================================
+   360° BANNER - DSU BLUE & GREEN THEME
+========================================= */
+.campus_360 {
+    position: relative;
+    margin-top: 50px;
+    padding: 25px 30px;
+    text-align: center;
+    border-radius: 20px;
+    
+    /* The Magic: DSU Deep Blue to Vibrant Green Gradient */
+    background: linear-gradient(135deg, #1e3a8a 0%, #059669 100%);
+    
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(5, 150, 105, 0.15);
+}
+
+/* Abstract Premium Circles in Background */
+.campus_360:before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    left: -80px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.campus_360:after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -100px;
+    bottom: -150px;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.campus_360_icon {
+    position: relative;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.campus_360 > span {
+    position: relative;
+    z-index: 1;
+    color: #a7f3d0; /* Light Mint Green for contrast */
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.campus_360 h2 {
+    position: relative;
+    z-index: 1;
+    margin: 10px 0 12px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.campus_360 p {
+    position: relative;
+    z-index: 1;
+    max-width: 550px;
+    margin: 0 auto 25px;
+    color: #e2e8f0; /* Crisp Slate White */
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.campus_360_button {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 25px;
+    background: #ffffff;
+    color: #059669; /* Emerald Green Text matching the theme */
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 800;
+    transition: all 0.3s ease;
+}
+
+.campus_360_button:hover {
+    transform: translateY(-6px);
+    background: #ecfdf5; /* Very light subtle green on hover */
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   RESPONSIVE DESIGN (FOR MOBILE)
+========================================= */
+@media (max-width: 850px) {
+    .campus_place {
+        grid-template-columns: 1fr; /* Mobile par 1 column */
+        gap: 20px;
+        padding: 15px;
+    }
+
+    /* Mobile par Image hamesha upar rahegi */
+    .campus_place.reverse .campus_image {
+        order: 1;
+    }
+    .campus_place.reverse .campus_info {
+        order: 2;
+    }
+
+    .campus_image {
+        height: 200px; /* Mobile par image aur thodi compact */
+    }
+
+    .campus_info {
+        padding: 5px 8px;
+    }
+}

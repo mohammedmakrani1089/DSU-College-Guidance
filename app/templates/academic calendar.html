@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block title %}
+Academic Calendar | DSU College Guidance
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/academic_calendar.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="academic_calendar_page">
+
+    <!-- ================= PREMIUM HEADER ================= -->
+    <div class="academic_calendar_header">
+        <h1>Academic Calendar</h1>
+        <p>Stay updated with important academic events, examinations, festivals, and student activities at DSU.</p>
+        <div class="academic_year">
+            <img src="{{ url_for('static', filename='icon/calendar.png') }}" alt="calendar"> Academic Year 2026 - 2027
+        </div>
+    </div>
+
+    <!-- ================= EVENTS GRID ================= -->
+    <div class="calendar_events_grid">
+        {% for event in events %}
+        <div class="calendar_event_card">
+            
+            <!-- Beautiful Date Badge -->
+            <div class="event_date_badge">
+                <span class="month">{{ event.EVENT_DATE.strftime('%b') }}</span>
+                <strong class="day">{{ event.EVENT_DATE.strftime('%d') }}</strong>
+                <small class="year">{{ event.EVENT_DATE.strftime('%Y') }}</small>
+            </div>
+
+            <!-- Event Information -->
+            <div class="event_info">
+                <span class="event_tag {{ event.EVENT_TYPE|lower|replace(' ', '-') }}">{{ event.EVENT_TYPE }}</span>
+                <h2>{{ event.TITLE }}</h2>
+                <p>{{ event.DESCRIPTION }}</p>
+                
+                {% if event.END_DATE %}
+                <div class="event_duration">
+                    ⏱️ {{ event.EVENT_DATE.strftime('%d %b') }} - {{ event.END_DATE.strftime('%d %b %Y') }}
+                </div>
+                {% endif %}
+            </div>
+            
+        </div>
+        {% else %}
+        
+        <!-- Empty State -->
+        <div class="no_calendar_events">
+            <img src="{{ url_for('static', filename='icon/calendar.png') }}" alt="No Events" style="width: 60px; opacity: 0.5; margin-bottom: 15px;">
+            <h2>No Upcoming Events</h2>
+            <p>There are currently no upcoming academic events scheduled.</p>
+        </div>
+        
+        {% endfor %}
+    </div>
+
+    <!-- ================= PAGINATION ================= -->
+    {% if total_pages > 1 %}
+    <div class="pagination_container">
+        {% if has_prev %}
+            <a href="{{ url_for(request.endpoint, page=prev_num) }}" class="page_btn">&larr; Prev</a>
+        {% else %}
+            <span class="page_btn disabled">&larr; Prev</span>
+        {% endif %}
+
+        <span class="page_info">Page {{ page }} of {{ total_pages }}</span>
+
+        {% if has_next %}
+            <a href="{{ url_for(request.endpoint, page=next_num) }}" class="page_btn">Next &rarr;</a>
+        {% else %}
+            <span class="page_btn disabled">Next &rarr;</span>
+        {% endif %}
+    </div>
+    {% endif %}
+
+</section>
+{% endblock %}

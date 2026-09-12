@@ -1,0 +1,760 @@
+.registration_success_modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(15,23,42,.6);
+    backdrop-filter: blur(7px);
+}
+.registration_success_popup {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    padding: 32px 27px;
+    border: 1px solid #bbf7d0;
+    border-radius: 20px;
+    background: linear-gradient(145deg,#ffffff,#f0fdf4);
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(15,23,42,.2);
+    animation: successPopupIn .3s ease;
+}
+.registration_success_close {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 20px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+.registration_success_close:hover {
+    transform: rotate(90deg);
+    background: #f0fdf4;
+    color: #16a34a;
+    border-color: #bbf7d0;
+}
+.registration_success_icon {
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 17px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #86efac;
+    border-radius: 50%;
+    background: #f0fdf4;
+    color: #16a34a;
+    font-size: 30px;
+    font-weight: 800;
+    box-shadow: 0 8px 22px rgba(22,163,74,.12);
+}
+.registration_success_popup > span {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: #2563eb;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+.registration_success_popup h2 {
+    margin: 0 0 9px;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 800;
+}
+.registration_success_popup p {
+    margin: 0 auto;
+    max-width: 320px;
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.75;
+}
+.registration_success_button {
+    margin-top: 21px;
+    padding: 11px 25px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(135deg,#2563eb,#16a34a);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 7px 18px rgba(37,99,235,.15);
+    transition: .3s ease;
+}
+.registration_success_button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 23px rgba(22,163,74,.18);
+}
+@keyframes successPopupIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@media(max-width:600px) {
+    .registration_success_modal {
+        padding: 14px;
+    }
+    .registration_success_popup {
+        padding: 28px 20px;
+        border-radius: 17px;
+    }
+    .registration_success_popup h2 {
+        font-size: 22px;
+    }
+    .registration_success_popup p {
+        font-size: 11px;
+    }
+}
+
+
+
+/* =========================================
+   EVENTS PAGE - DSU UNIFIED DESIGN SYSTEM
+========================================= */
+.events_page {
+    width: 90%;
+    max-width: 1240px;
+    margin: 50px auto 90px;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+.events_header {
+    max-width: 760px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.header_badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.events_header h1 {
+    margin: 0 0 14px;
+    color: #0f172a;
+    font-size: 42px;
+    font-weight: 850;
+    letter-spacing: -0.5px;
+}
+
+.events_header p {
+    margin: 0;
+    color: #64748b;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   5-BOX GRID LAYOUT
+========================================= */
+.events_layout {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    grid-template-rows: auto auto auto;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Universal Event Box */
+.event_box {
+    position: relative;
+    padding: 30px;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.035);
+    transition: all 0.35s ease;
+    overflow: hidden;
+}
+
+.event_box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Top-Right Number Pill */
+.box_index {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #1e3a8a;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.box_kicker {
+    display: inline-block;
+    color: #059669;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   BOX 01: EVENT INFORMATION
+========================================= */
+.event_information {
+    grid-column: 1;
+    grid-row: 1;
+    background: linear-gradient(145deg, #f8fbff 0%, #ffffff 60%, #f0fdf4 100%);
+    border-color: #dbeafe;
+}
+
+.event_information h2 {
+    margin: 0 0 12px;
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.event_information p {
+    color: #475569;
+    font-size: 13.5px;
+    line-height: 1.75;
+    margin: 0 0 12px;
+}
+
+.event_info_highlights {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.info_highlight_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 14px 10px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+}
+
+.info_highlight_card:hover {
+    transform: translateY(-3px);
+    border-color: #bfdbfe;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.08);
+}
+
+.highlight_icon {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.info_highlight_card strong {
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: 750;
+    margin-bottom: 2px;
+}
+
+.info_highlight_card small {
+    color: #64748b;
+    font-size: 10.5px;
+    font-weight: 500;
+}
+
+/* =========================================
+   BOX 02: EVENT PHOTO SLIDER
+========================================= */
+.event_photo_slider {
+    grid-column: 1;
+    grid-row: 2;
+    padding-bottom: 22px;
+}
+
+.event_slider {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #0f172a;
+}
+
+.event_slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.03);
+    transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s ease;
+}
+
+.event_slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.event_slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event_slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.1) 60%);
+}
+
+.event_slide_content {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 22px;
+    z-index: 2;
+}
+
+.slide_tag {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: rgba(5, 150, 105, 0.9);
+    color: #ffffff;
+    font-size: 10.5px;
+    font-weight: 750;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    backdrop-filter: blur(4px);
+}
+
+.event_slide_content h2 {
+    margin: 0 0 6px;
+    color: #ede507;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.event_slide_content p {
+    max-width: 580px;
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+/* Dots */
+.event_slider_dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.event_slider_dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.event_slider_dots button.active {
+    width: 26px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #1e3a8a, #059669);
+}
+
+/* =========================================
+   BOX 03: UPCOMING EVENTS
+========================================= */
+.upcoming_events {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.event_box_heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.event_box_heading h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.live_pulse_badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #059669;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.upcoming_event_list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.upcoming_event_item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border: 1px solid #f1f5f9;
+    border-radius: 14px;
+    background: #ffffff;
+    transition: all 0.25s ease;
+}
+
+.upcoming_event_item:hover {
+    transform: translateX(4px);
+    border-color: #bfdbfe;
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.05);
+    background: #f8fbff;
+}
+
+.event_date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.event_date strong {
+    color: #1e3a8a;
+    font-size: 17px;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.event_date span {
+    margin-top: 3px;
+    color: #059669;
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.upcoming_event_info {
+    flex-grow: 1;
+}
+
+.upcoming_event_info h3 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 750;
+    color: #0f172a;
+}
+
+.upcoming_event_info p {
+    margin: 0;
+    color: #64748b;
+    font-size: 12px;
+}
+
+.event_arrow {
+    color: #cbd5e1;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.upcoming_event_item:hover .event_arrow {
+    color: #1e3a8a;
+    transform: translateX(3px);
+}
+
+.no_events {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+    padding: 15px 0;
+}
+
+/* =========================================
+   BOX 04: EVENT GALLERY
+========================================= */
+.event_gallery {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.event_gallery .event_box_heading {
+    margin-bottom: 16px;
+}
+
+.gallery_desc {
+    margin: 8px 0 0;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: 440px;
+}
+
+.gallery_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+   flex-grow: 1;
+}
+
+.gallery_item {
+    position: relative;
+    height: 145px;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #0f172a;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.gallery_item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.gallery_item:hover img {
+    transform: scale(1.08);
+}
+
+.gallery_overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 14px 12px;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 60%);
+}
+
+.gallery_overlay span {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+/* =========================================
+   BOX 05: ENRICHED CATEGORIES SECTION
+========================================= */
+.event_categories {
+    grid-column: 2;
+    grid-row: 3;
+    background: linear-gradient(150deg, #f0fdf4 0%, #ffffff 50%, #eff6ff 100%);
+    border-color: #dcfce7;
+}
+
+.event_categories h2 {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.event_categories > p {
+    margin: 0 0 20px;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.65;
+}
+
+/* Detailed Category Cards */
+.event_category_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 12px;
+    padding-top: 20px;
+}
+
+.category_card {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(6px);
+    transition: all 0.25s ease;
+}
+
+.category_card:hover {
+    transform: translateY(-4px);
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+.cat_icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cat_icon.blue {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.cat_icon.green {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.cat_details h4 {
+    margin: 0 0 5px;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 750;
+}
+
+.cat_details p {
+    margin: 0;
+    color: #64748b;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.45;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1050px) {
+    .events_layout {
+        grid-template-columns: 1fr;
+    }
+
+    .event_information,
+    .event_photo_slider,
+    .upcoming_events,
+    .event_gallery,
+    .event_categories {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .gallery_item {
+        height: 200px;
+    }
+}
+
+@media (max-width: 650px) {
+    .events_page {
+        width: 94%;
+        margin: 35px auto 65px;
+    }
+
+    .events_header h1 {
+        font-size: 32px;
+    }
+
+    .event_box {
+        padding: 20px;
+    }
+
+    .event_info_highlights {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event_category_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery_item {
+        height: 160px;
+    }
+
+    .event_slider {
+        height: 240px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

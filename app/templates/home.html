@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}DSU College Guidence {% endblock %}
+{% block css %}
+
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/welcome_container.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/Navbar.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/quick access.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/home panel.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/academic_calendar.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/subject details.css')}}">
+<link rel="stylesheet" href="{{url_for('static' , filename = 'css/admission guide.css')}}">
+
+{% endblock %}
+
+{% block content %}
+
+<section class="welcome_container">
+    
+    <div class="welcome_leftside">
+        <h4>Welcome To DSU &#127891;</h4>
+        <h2>Your Journey <br>
+            <span class="highlight-text">Starts  </span>Here</h2>
+        <p>We are here to guide you every step of the way.<br>Explore. Learn. Grow. Succeed.</p>
+        
+        <div class="button_container">
+            <button class="get-started-button" type="button">
+                <img src="{{ url_for('static', filename='icon/user.png') }}" alt="profile">
+                New Student Journey &rarr;
+            </button>
+            <a href="{{ url_for('home.campus_tour') }}" class="btn2">
+                &#9654; Explore Campus
+            </a>
+        </div>
+    </div>
+
+    <div class="welcome_rightside">
+        <div class="stats_container">
+            
+            <div class="right_logos">
+                <div class="icon_wrapper">
+                    <img src="{{url_for('static' , filename = 'icon/student.png')}}" alt="student">
+                </div>
+                <div class="right_text">
+                    <h4>5000+</h4>
+                    <p>Students</p>
+                </div>
+            </div>
+
+            <div class="right_logos">
+                <div class="icon_wrapper">
+                    <img src="{{url_for('static' , filename = 'icon/icons8-teacher-48.png')}}" alt="classroom">
+                </div>
+                <div class="right_text">
+                    <h4>300+</h4>
+                    <p>Expert Faculty</p>
+                </div>
+            </div>
+
+            <div class="right_logos">
+                <div class="icon_wrapper">
+                    <img src="{{url_for('static' , filename = 'icon/flats.png')}}" alt="flat ">
+                </div>
+                <div class="right_text">
+                    <h4>40+</h4>
+                    <p>Departments</p>
+                </div>
+            </div>
+
+            <div class="right_logos">
+                <div class="icon_wrapper">
+                    <img src="{{url_for('static' , filename = 'icon/trophy.png')}}" alt="trophy">
+                </div>
+                <div class="right_text">
+                    <h4>100+</h4>
+                    <p>Awards</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="quick">
+
+    <h3>Quick Access</h3>
+    <div class="quick_cards">
+
+        <a class="cards" href="{{ url_for('home.about_college')}}">
+            <img src="{{url_for('static',filename = 'icon/building.png')}}" alt="apartment">
+            <p>About College</p>
+        </a>
+
+        <a class="cards" href="{{url_for('home.academic_calendar')}}">
+            <img src="{{url_for('static',filename = 'icon/calendar.png')}}" alt="apartment">
+            <p>Academic Calendar</p>
+        </a>
+
+        <a class="cards" href="#" id="subjectDetailsBtn">
+            <img src="{{url_for('static',filename = 'icon/books.png')}}" alt="apartment">
+            <p>Subject Details</p>
+        </a>
+
+        <a class="cards" href="{{ url_for('home.facilities')}}">
+            <img src="{{url_for('static',filename = 'icon/amenities.png')}}" alt="apartment">
+            <p >Facilities</p>
+        </a>
+
+        <a href="#" class="cards admissionGuideBtn">
+            
+            <img src="{{url_for('static',filename = 'icon/guide.png')}}" alt="apartment">
+            <p >Admission Guide</p>
+        </a>
+
+        <a class="cards" href="{{ url_for('home.placement')}}">
+            <img src="{{url_for('static',filename = 'icon/case.png')}}" alt="apartment">
+            <p>Placement</p>
+        </a>
+
+        <a class="cards" href="{{ url_for('home.events')}}">
+            <img src="{{url_for('static',filename = 'icon/event-list.png')}}" alt="apartment">
+            <p>Club & Event</p>
+        </a>
+
+        <a class="cards" href="{{ url_for('home.tips_and_tricks')}}">
+            <img src="{{url_for('static',filename = 'icon/idea.png')}}" alt="apartment">
+            <p>Tips & Tricks</p>
+        </a>
+    </div>
+
+</section>
+
+
+<div class="two_container">
+<section class="notice_container">
+
+    <div class="heading">
+    
+    <h2>Latest Notices</h2>
+    <h4><a href="{{url_for('home.notice')}}">View All</a></h4>
+    </div>
+
+    <div class="notice_subcontainer">
+        
+        {% for notice in notices %}
+            <div class="notices">
+                <p>{{notice.NOTICE_DATE}}</p>
+                <h3>{{notice.TITLE}}</h3>
+                <p>
+                    {{ notice.DESCRIPTION.split()[:5] | join(' ') }}
+                    {% if notice.DESCRIPTION.split()|length > 5 %}...{% endif %}
+                    <a href="{{url_for('home.notice')}}" class="readmore">Read More</a>
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="get_started_container">
+    <!-- Header Section -->
+    <div class="journey_header">
+        <div class="journey_title_group">
+            <div class="journey_main_icon">
+                <img src="{{url_for('static',filename = 'icon/networking.png')}}" alt="journey">
+            </div>
+            <div class="journey_text">
+                <h3>New Student Journey</h3>
+                <p>Follow these simple steps to get started at DSU</p>
+            </div>
+        </div>
+        <button class="get-started-button" type="button">
+            Start Journey &rarr;
+        </button>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline_wrapper">
+        <!-- The Background Dotted Line -->
+        <div class="dotted_line_bg"></div>
+
+        <!-- Step 1 -->
+        <div class="step">
+            <div class="icon_circle border-blue">
+                <img src="{{url_for('static',filename = 'icon/user.png')}}" alt="user">
+            </div>
+            <div class="step_num">1</div>
+            <p>Admission<br>Complete</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step">
+            <div class="icon_circle border-green">
+                <img src="{{url_for('static',filename = 'icon/id-card.png')}}" alt="id">
+            </div>
+            <div class="step_num">2</div>
+            <p>Get Your<br>ID Card</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step">
+            <div class="icon_circle border-orange">
+                <img src="{{url_for('static',filename = 'icon/book.png')}}" alt="book">
+            </div>
+            <div class="step_num">3</div>
+            <p>Visit Your<br>Department</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step">
+            <div class="icon_circle border-purple">
+                <img src="{{url_for('static',filename = 'icon/calendar.png')}}" alt="calendar">
+            </div>
+            <div class="step_num">4</div>
+            <p>Check Academic<br>Calendar</p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step">
+            <div class="icon_circle border-pink">
+                <img src="{{url_for('static',filename = 'icon/school.png')}}" alt="school">
+            </div>
+            <div class="step_num">5</div>
+            <p>Explore Campus<br>Facilities</p>
+        </div>
+    </div>
+</section>
+
+</div>
+
+
+{% endblock %}
+
+
+

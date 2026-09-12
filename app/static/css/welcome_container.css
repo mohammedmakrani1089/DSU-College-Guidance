@@ -1,0 +1,174 @@
+.welcome_container{
+    margin: 10px 30px ;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    min-height: 350px;
+    padding: 30px;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, white 5%, transparent 40%) ,url("../icon/dsu image3.png");
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0.8) 25%, rgba(255, 255, 255, 0) 65%), url("../icon/dsu image3.png");
+    background-size:cover;
+    background-position:center;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.welcome_leftside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    gap:15px;
+    z-index: 2;
+}
+
+.welcome_leftside h4{
+    font-size: 15px;
+    font-weight: 500;
+    color: #0f172a; 
+}
+
+.welcome_leftside h2{
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0;
+    color: #0f172a;
+    text-shadow: 0px 0px 12px rgb(176, 201, 248);
+    line-height: 1.1;
+}
+
+.welcome_leftside p{
+    font-size: 14px;
+    font-weight: 400;
+    color:  #475569;
+    text-shadow: 4px 4px 12px rgba(255, 255, 255, 1);
+
+}
+
+.highlight-text{
+    color: rgb(11, 85, 235);
+}
+
+
+/* ------ buttons ------ */
+
+.button_container{
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+}
+
+.get-started-button {
+    display: inline-flex;
+    background-color: rgb(11, 85, 235);
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid rgb(11, 85, 235);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.4s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+.get-started-button img{
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.get-started-button:hover {
+    transform: translateY(-5px);
+    background-color: white;
+    color: rgb(11, 85, 235);
+    box-shadow: 0 10px 25px rgba(11, 85, 235, 0.2);
+}
+
+
+.btn2 {
+    background-color: white;
+    color: rgb(11, 85, 235);
+    padding: 10px 20px;
+    border: 2px solid rgb(11, 85, 235);
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn2:hover {
+    transform: translateY(-5px);
+    background-color: rgb(11, 85, 235);
+    color: white;
+    box-shadow: 0 8px 20px rgba(11, 85, 235, 0.2);
+}
+
+.welcome_rightside{
+    display: flex;  
+    align-self:flex-end;
+}
+
+.stats_container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.right_logos{
+    display: flex;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: white;
+    padding: 14px 20px;
+    align-items: center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+}
+
+.right_logos:hover {
+    transform: translateY(-5px);
+    background-color: #e5e6e6;
+    box-shadow: 0 12px 25px rgba(11, 85, 235, 0.15);
+    border: 2px solid rgb(11, 85, 235);
+}
+
+.right_logos img{
+    width: 40px;
+    height: 35px;
+    margin-right: 10px;
+    transition: transform 0.4s ease;
+}
+
+.right_logos:hover img {
+    transform: scale(1.1);
+}
+
+.right_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap:4px;
+}
+
+.right_text h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.right_text p {
+    margin: 0;
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}

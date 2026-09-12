@@ -1,0 +1,470 @@
+.vision_mission_section{
+
+    margin: 10px 30px;
+    padding: 20px 20px;
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    border-radius: 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    background-color: white;
+}
+
+.vision_box{
+    width: 28%;
+    padding-right: 20px;
+}
+
+.vision_box h2{
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.mission_box h2{
+    font-size: 20px;
+    color: #0f172a;
+    margin-bottom: 15px;
+    text-align: center;
+
+}
+
+.vision_content{
+    display: flex;
+    align-items: flex-start;
+    
+}
+
+.vision_icon{
+    min-width: 55px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #eff6ff;
+    margin-right: 12px;
+}
+
+.vision_icon img{
+    width: 30px;
+    height: 30px;
+}
+
+.vision_content p{
+    font-size: 14px;
+    line-height: 1.5;
+    color: #475569;
+    margin: 0;
+    
+}
+
+.mission_box{
+    width: 72%;
+}
+.mission_cards{
+    display: flex;
+    
+}
+
+
+
+.mission_card{
+    width: 20%;
+    min-height: 145px;
+    padding: 15px 10px;
+    margin-right: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.4s ease;
+    
+}
+
+.mission_card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    border: 1px solid #2563eb;
+}
+
+.mission_card:nth-child(1){
+    background-color: #fff1f2;
+}
+
+.mission_card:nth-child(2){
+    background-color: #ecfdf5;
+}
+
+.mission_card:nth-child(3){
+    background-color: #f5f3ff;
+}
+
+.mission_card:nth-child(4){
+    background-color: #fff7ed;
+}
+
+.mission_card:nth-child(5){
+    background-color: #eff6ff;
+}
+
+.mission_card:last-child{
+    margin-right: 0;
+}
+
+.mission_card img{
+    width: 35px;
+    height: 35px;
+    margin-bottom: 8px;
+}
+
+.mission_card h3{
+    font-size: 15px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.mission_card p{
+    font-size: 12px;
+    line-height: 1.5;
+    color: #64748b;
+    margin: 0;
+}
+
+
+.university_highlights{
+    margin: 10px 30px;
+    padding: 15px 0px;
+    border: none;
+    border-radius: 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    background-color: white;
+}
+
+.university_highlights h2{
+    text-align: center;
+    font-size: 17px;
+    color: #0f172a;
+    margin-bottom: 12px;
+}
+
+.highlight_cards{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.highlight_card{
+    width: 160px;
+    padding: 10px 8px;
+    margin-right: 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #ffffff;
+    justify-content: center;
+    transition: 0.3s ease;
+}
+
+
+.highlight_card:nth-child(1){
+    background-color: #fef2f2;
+}
+
+.highlight_card:nth-child(2){
+    background-color: #ecfdf5;
+}
+
+.highlight_card:nth-child(3){
+    background-color: #f5f3ff;
+}
+
+.highlight_card:nth-child(4){
+    background-color: #fff7ed;
+}
+
+.highlight_card:nth-child(5){
+    background-color: #eff6ff;
+}
+
+.highlight_card:nth-child(6){
+    background-color: #fff7ed;
+}
+
+.highlight_card:nth-child(7){
+    background-color: #fdf4ff;
+}
+
+.highlight_card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    border: 1px solid #2563eb;
+}
+
+.highlight_card:last-child{
+    margin-right: 0;
+}
+
+.highlight_card img{
+    width: 35px;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.highlight_card h3{
+    font-size: 13px;
+    color: #2563eb;
+    margin: 0 0 5px;
+}
+
+.highlight_card p{
+    font-size: 12px;
+    color: #475569;
+    line-height: 1.3;
+    margin: 3px;
+    font-weight: 500;
+}
+
+
+
+.departments_section{
+    margin: 10px 30px;
+    padding-top: 20px;
+    border-top: 3px solid #e2e8f0;
+}
+
+.departments_heading{
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.departments_heading span{
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.departments_heading h2{
+    font-size: 24px;
+    color: #0f172a;
+    margin: 6px 0;
+}
+
+.departments_heading p{
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.department_cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.department_card{
+    width: 300px;
+    min-height: 125px;
+    margin: 10px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.department_card:hover{
+    transform: translateY(-4px);
+    border: 1px solid #2563eb;
+    box-shadow: 0 8px 20px rgba(37,99,235,0.08);
+}
+
+.department_icon{
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    /* background-color: #eff6ff; */
+}
+
+.department_icon img{
+    width: 35px;
+    height: 35px;
+}
+
+.department_card h3{
+    font-size: 14px;
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.department_card p{
+    font-size: 12px;
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.departments_action{
+    text-align: center;
+    margin-top: 12px;
+}
+
+.departments_action a{
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #0f2f63;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    border: 2px solid #0f2f63;
+}
+
+.departments_action a:hover{
+    background-color: rgb(11, 85, 235);
+    border-color: rgb(11, 85, 235);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(11, 85, 235, 0.2);
+}
+
+
+
+
+/* --- Main Section --- */
+.campus_life_section {
+    margin: 10px 30px;
+    padding: 15px 10px;
+    border: 1px solid #f1f5f9;
+    border-radius: 24px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* --- Heading Section --- */
+.campus_life_heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.campus_life_heading span {
+    color: rgb(11, 85, 235); /* DSU Brand Blue */
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.campus_life_heading h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 7px 0;
+}
+
+.campus_life_heading p {
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto; /* Paragraph ko perfect center me rakhne ke liye */
+}
+
+/* --- Cards Container --- */
+.campus_life_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Taki screen choti hone par cards niche aa jayein */
+    gap: 28px; /* Cards ke beech ki exact spacing */
+    margin-bottom: 10px;
+}
+
+/* --- Individual Card --- */
+.campus_life_card {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    background-color: #ffffff;
+    padding: 10px;
+    /* padding-bottom: 10px; */
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.campus_life_card:hover {
+    transform: translateY(-8px);
+    border-color: rgb(11, 85, 235);
+    box-shadow: 0 15px 30px rgba(11, 85, 235, 0.1);
+}
+
+/* --- The Magic Image Wrapper --- */
+.image_wrapper {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden; /* Ye zoom hoti image ko box se bahar nahi aane dega */
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.image_wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Image ka aspect ratio theek rakhega */
+    transition: transform 0.5s ease;
+}
+
+.campus_life_card:hover .image_wrapper img {
+    transform: scale(1.1); 
+}
+
+/* --- Card Text --- */
+.campus_life_text {
+    text-align: center;
+}
+
+.campus_life_text h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 10px 0;
+}
+
+/* --- Action Button --- */
+.campus_action {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.campus_action a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #0f2f63; /* Premium Dark Navy */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    border: 2px solid #0f2f63;
+}
+
+.campus_action a:hover {
+    background-color: rgb(11, 85, 235);
+    border-color: rgb(11, 85, 235);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(11, 85, 235, 0.2);
+}
