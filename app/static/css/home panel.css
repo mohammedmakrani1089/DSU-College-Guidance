@@ -257,8 +257,8 @@
 .border-blue { border-color: #3b82f6; box-shadow: 0 0 10px rgba(59, 130, 246, 0.1); }
 .border-green { border-color: #f59e0b; box-shadow: 0 0 10px rgba(16, 185, 129, 0.1); }
 .border-orange { border-color: #10b981; box-shadow: 0 0 10px rgba(245, 158, 11, 0.1); }
-.border-purple { border-color: #f43f5e; box-shadow: 0 0 10px rgba(139, 92, 246, 0.1); }
-.border-pink { border-color: #8b5cf6; box-shadow: 0 0 10px rgba(244, 63, 94, 0.1); }
+.border-purple { border-color: #0008ff; box-shadow: 0 0 10px rgba(139, 92, 246, 0.1); }
+.border-pink { border-color: #f67a07; box-shadow: 0 0 10px rgba(244, 63, 94, 0.1); }
 
 /* The Number Badge */
 .step_num {

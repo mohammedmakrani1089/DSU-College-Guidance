@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon/DSU Logo.png') }}">
 
     <title>{% block title %}DSU College Guidence{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename = 'css/Navbar.css') }}">
@@ -640,77 +641,189 @@
 {% block footer %} 
 
 <footer class="footer">
-    <div class="footer-top">
+    <div class="footer_inner">
+        <div class="footer-top">
 
-        <!-- Column 2: Contact Us -->
-        <div class="footer-col">
-            <h5>Contact Us</h5>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
-                <p>+91 12345 67890</p>
+            <!-- Column 1: Contact Us -->
+            <div class="footer-col">
+                <h5>Contact Us</h5>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap">
+                        <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
+                    </div>
+                    <p>+91 12345 67890</p>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap">
+                        <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
+                    </div>
+                    <p>info@dsu.ac.in</p>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap">
+                        <img src="{{ url_for('static', filename='icon/map-pin.png') }}" alt="location">
+                    </div>
+                    <p>Dr. Subhash University,<br>Junagadh, Gujarat</p>
+                </div>
             </div>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
-                <p>info@dsu.ac.in</p>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <div class="footer-links-list">
+                    <a href="{{ url_for('home.home') }}">Home</a>
+                    <a href="{{ url_for('home.about_college') }}">About College</a>
+                    <a href="{{ url_for('home.campus_tour') }}">Campus Tour</a>
+                    <a href="{{ url_for('home.academics') }}">Academics</a>
+                </div>
             </div>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/map-pin.png') }}" alt="location">
-                <p>Dr. Subhash University,<br>Junagadh, Gujarat, India</p>
+
+            <!-- Column 3: Emergency Helpline -->
+            <div class="footer-col">
+                <h5>Helpline &amp; Support</h5>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap alert_wrap">
+                        <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
+                    </div>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap alert_wrap">
+                        <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
+                    </div>
+                    <p>emergency@dsu.ac.in</p>
+                </div>
+                <div class="footer-contact-item">
+                    <div class="icon_wrap alert_wrap">
+                        <img src="{{ url_for('static', filename='icon/24-hours-support.png') }}" alt="time">
+                    </div>
+                    <p class="live_badge_text"><span></span> 24x7 Dedicated Desk</p>
+                </div>
             </div>
+
+            <!-- Column 4: Follow Us & Rate -->
+            <div class="footer-col footer-col-action">
+                <h5>Connect With Us</h5>
+                <div class="social-logos">
+                    <a href="#" class="social-icon fb" title="Facebook">
+                        <img src="{{ url_for('static', filename='icon/communication.png') }}" alt="fb">
+                    </a>
+                    <a href="#" class="social-icon insta" title="Instagram">
+                        <img src="{{ url_for('static', filename='icon/instagram.png') }}" alt="insta">
+                    </a>
+                    <a href="#" class="social-icon yt" title="YouTube">
+                        <img src="{{ url_for('static', filename='icon/youtube.png') }}" alt="yt">
+                    </a>
+                    <a href="#" class="social-icon linkedin" title="LinkedIn">ln</a>
+                </div>
+
+                <button type="button" class="footer-rating-btn" id="openRatingBtn">
+                    <span class="star_icon">★</span> Rate Experience
+                </button>
+            </div>
+
         </div>
-        
 
-        <!-- Column 3: Quick Links -->
-        <div class="footer-col">
-            <h5>Quick Links</h5>
-            <a href="{{url_for('home.home')}}">Home </a>
-            <a href="#">About Us</a>
-            <a href="{{url_for('home.about_college')}}">About College</a>
-        </div>
-
-        <!-- Column 1: Emergency Contact -->
-        <div class="footer-col">
-            <h5>Emergency Contact</h5>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/telephone.png') }}" alt="call">
-                <p>+91 98765 43210</p>
+        <!-- Bottom Footer -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Dr. Subhash University. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="{{url_for('home.private_policy')}}">Privacy Policy</a>
+                <span class="divider">•</span>
+                <a href="{{url_for('home.terms_and_conditions')}}">Terms &amp; Conditions</a>
+                
             </div>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/message.png') }}" alt="email">
-                <p>emergency@dsu.ac.in</p>
-            </div>
-            <div class="footer-contact-item">
-                <img src="{{ url_for('static', filename='icon/24-hours-support.png') }}" alt="time">
-                <p>24x7 Helpline</p>
-            </div>
-        </div>
-
-
-        <!-- Column 4: Follow Us -->
-        <div class="footer-col">
-            <h5 style="text-align: center;">Follow Us</h5>
-            <div class="social-logos">
-                <!-- Inko bhi tum chaho to <img> se replace kar sakte ho -->
-                <img src="{{ url_for('static', filename='icon/communication.png') }}" alt="" class="social-icon fb">
-                <img src="{{ url_for('static', filename='icon/instagram.png') }}" alt="" class="social-icon fb">
-                <img src="{{ url_for('static', filename='icon/youtube.png') }}" alt="" class="social-icon fb">
-                <div class="social-icon linkedin">in</div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Bottom Footer (Copyright & Policies) -->
-    <div class="footer-bottom">
-        <p>&copy; 2024 DSU College Guidance. All Rights Reserved.</p>
-        <div class="footer-bottom-links">
-            <span class="divider">|</span>
-            <a href="#">Privacy Policy</a>
-            <span class="divider">|</span>
-            <a href="#">Terms & Conditions</a>
         </div>
     </div>
 </footer>
+
+
+<!-- Website Rating Popup -->
+<div class="rating-modal" id="ratingModal">
+
+    <div class="rating-popup">
+
+        <button type="button" class="rating-close" id="ratingClose">
+            &times;
+        </button>
+
+        <div class="rating-popup-icon">
+            ⭐
+        </div>
+
+        <h2>Rate Our Website</h2>
+
+        <p class="rating-popup-subtitle">
+            Share your experience with DSU College Guidance.
+        </p>
+
+        <form id="ratingForm">
+
+            <div class="rating-field">
+                <label for="ratingName">Your Name</label>
+
+                <input
+                    type="text"
+                    id="ratingName"
+                    name="user_name"
+                    placeholder="Enter your name"
+                    maxlength="100"
+                    required
+                >
+            </div>
+
+            <div class="rating-field">
+
+                <label>Your Rating</label>
+
+                <div class="star-rating" id="starRating">
+
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+
+                </div>
+
+                <p class="rating-message" id="ratingMessage">
+                    Select a rating
+                </p>
+
+            </div>
+
+            <div class="rating-field">
+                <label for="ratingDescription">Your Feedback</label>
+
+                <textarea
+                    id="ratingDescription"
+                    name="description"
+                    rows="4"
+                    maxlength="500"
+                    placeholder="Tell us about your experience..."
+                    required
+                ></textarea>
+            </div>
+
+            <button type="button" class="rating-submit-btn" id="ratingSubmitBtn">
+                Submit Rating →
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
 {% endblock %}
 
 {% block javascript %}
@@ -722,6 +835,7 @@
 <script src="{{ url_for('static', filename='js/club.js') }}"></script>
 <script src="{{ url_for('static', filename='js/student_journey.js') }}"></script>
 <script src="{{ url_for('static', filename='js/tips and tricks.js') }}"></script>
+<script src="{{ url_for('static', filename='js/rating.js') }}"></script>
 {% endblock%}
 
 </body>

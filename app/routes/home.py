@@ -339,4 +339,95 @@ def get_journey_admission():
 @home_bp.route("/Tips & Tricks")
 def tips_and_tricks():
     return render_template("tips and tricks.html")
+
+
+@home_bp.route("/WebsiteRating", methods=["POST"])
+def website_rating():
+    data = request.get_json()
+
+    user_name = data.get("user_name", "").strip()
+    rating = data.get("rating")
+    description = data.get("description", "").strip()
+
+    if not user_name:
+        return jsonify({
+            "success": False,
+            "message": "Please enter your name."
+        }), 400
+
+    if not rating:
+        return jsonify({
+            "success": False,
+            "message": "Please select a rating."
+        }), 400
+
+    if not description:
+        return jsonify({
+            "success": False,
+            "message": "Please enter your feedback."
+        }), 400
+
+    try:
+        rating = int(rating)
+    except (TypeError, ValueError):
+        return jsonify({
+            "success": False,
+            "message": "Invalid rating."
+        }), 400
+
+    if rating < 1 or rating > 5:
+        return jsonify({
+            "success": False,
+            "message": "Rating must be between 1 and 5."
+        }), 400
+
+    visitor_token = request.cookies.get("visitor_token")
+
+    if not visitor_token:
+        return jsonify({
+            "success": False,
+            "message": "Visitor session not found. Please refresh the page and try again."
+        }), 400
+
+    connection = get_connection()
+    cursor = connection.cursor()
+
+    query = """
+        UPDATE website_visitors
+        SET USER_NAME = %s,
+            RATING = %s,
+            DESCRIPTION = %s
+        WHERE VISITOR_TOKEN = %s
+    """
+
+    cursor.execute(
+        query,
+        (user_name, rating, description, visitor_token)
+    )
+
+    connection.commit()
+
+    updated_rows = cursor.rowcount
+
+    cursor.close()
+    connection.close()
+
+    if updated_rows == 0:
+        return jsonify({
+            "success": False,
+            "message": "Visitor record not found."
+        }), 404
+
+    return jsonify({
+        "success": True,
+        "message": "Thank you for rating our website!"
+    })
     
+    
+@home_bp.route("/Private Policy")
+def private_policy():
+    return render_template("private policy.html")
+
+@home_bp.route("/Terms & Tricks")
+def terms_and_conditions():
+    return render_template("terms & conditions.html")
